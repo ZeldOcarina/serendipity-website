@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://nicole-tabs.netlify.app",
+  siteUrl: "https://serendipity-website.vercel.app/",
   title: "Serendipity Film Group",
   description:
     "We produce films about fascinating people and stories that inspire, entertain and capture the imagination. Aligned with strategic partnerships, we are committed to deliver dynamic entertainment to our audiences.",
