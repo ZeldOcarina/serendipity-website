@@ -22,31 +22,6 @@ module.exports = {
     },
     `gatsby-transformer-json`,
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "content",
-        path: "./src/content/",
-      },
-      __key: "content",
-    },
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyDefault: "en",
-        useLangKeyLayout: true,
-        langKeyForNull: "en",
-        prefixDefault: true,
-      },
-    },
-    {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `https://admin.nicoletabs.com`,
