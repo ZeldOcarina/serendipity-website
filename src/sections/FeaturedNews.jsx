@@ -57,7 +57,6 @@ const FeaturedNews = () => {
   const {
     allStrapiSerendipityNews: { serendipityNews },
   } = useStaticQuery(query);
-  console.log(serendipityNews);
   return (
     <StyledFeaturedNews>
       <h2>PRESS</h2>

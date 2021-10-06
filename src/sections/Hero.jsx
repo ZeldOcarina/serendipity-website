@@ -85,7 +85,7 @@ const query = graphql`
             alternativeText
             id
             localFile {
-              publicURL
+              publicURL: url
             }
           }
           bgImage {
