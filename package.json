@@ -1,0 +1,54 @@
+{
+  "name": "nicole-tabs-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A website for Nicole Tabs",
+  "author": "Mattia Rasulo",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "startClean": "gatsby clean && gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "manualServe": "serve public",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "babel-plugin-styled-components": "^1.13.2",
+    "bootstrap": "^5.1.0",
+    "gatsby": "next",
+    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-image": "^1.11.0",
+    "gatsby-plugin-react-helmet": "^4.12.0",
+    "gatsby-plugin-sass": "^4.11.0",
+    "gatsby-plugin-sharp": "^3.11.0",
+    "gatsby-plugin-sitemap": "^4.7.0",
+    "gatsby-plugin-styled-components": "^4.11.0",
+    "gatsby-plugin-webfonts": "^2.1.1",
+    "gatsby-source-contentful": "^5.11.1",
+    "gatsby-source-filesystem": "^3.11.0",
+    "gatsby-source-strapi": "^1.0.2",
+    "gatsby-transformer-json": "^3.12.0",
+    "gatsby-transformer-sharp": "^3.11.0",
+    "node-sass": "^6.0.1",
+    "normalize.css": "^8.0.1",
+    "polished": "^4.1.3",
+    "querystring": "^0.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
+    "react-responsive": "^9.0.0-beta.3",
+    "styled-components": "^5.3.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@netlify/plugin-gatsby": "^1.0.3",
+    "serve": "^12.0.0"
+  }
+}
