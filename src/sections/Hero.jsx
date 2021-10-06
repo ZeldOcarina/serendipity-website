@@ -40,7 +40,7 @@ const StyledHero = styled.section`
   }
 
   .bg-image {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left: 0;
     z-index: -1;

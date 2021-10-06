@@ -1,7 +1,6 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "gatsby";
-import respond from "../styles/abstracts/mediaqueries";
 
 const StyledFooter = styled.footer`
   background-color: var(--color-primary-light);
@@ -19,13 +18,16 @@ const Footer = ({
   siteMetadata: {
     navbarLinks: { social, pages },
   },
+  logo,
+  logoAlt,
 }) => {
   return (
     <StyledFooter>
       <div className="container">
-        <img src="./serendipity-logo.svg" alt="Serendipity Logo" className="logo" />
+        <img src={logo} alt={logoAlt} className="logo" />
         <div className="copyright">
-          &copy;{new Date().getFullYear()} Monarchy LLC. All Rights Reserved | <Link to="/privacy">Privacy Policy</Link>
+          &copy;{new Date().getFullYear()} Serendipity Film Group. All Rights Reserved |{" "}
+          <Link to="/privacy">Privacy Policy</Link>
         </div>
       </div>
     </StyledFooter>

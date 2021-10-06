@@ -1,9 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
-import Button from "../components/Button";
 
 const StyledFeaturedNews = styled.div`
   color: var(--body-color);

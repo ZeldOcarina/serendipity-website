@@ -1,8 +1,8 @@
 module.exports = {
   siteUrl: "https://nicole-tabs.netlify.app",
-  title: "Nicole Tabs",
+  title: "Serendipity Film Group",
   description:
-    "Nicole Tabs is an entrepreneur and influencer passionate about bridging the gap between businesses and art. Hang around the website and get to know Nicole more!",
+    "We produce films about fascinating people and stories that inspire, entertain and capture the imagination. Aligned with strategic partnerships, we are committed to deliver dynamic entertainment to our audiences.",
   navbarLinks: {
     social: {
       facebook: "https://www.facebook.com/nicoletabz",
@@ -16,22 +16,22 @@ module.exports = {
         name: "home",
         link: "/",
       },
-      {
-        name: "about",
-        link: "/about",
-      },
-      {
-        name: "projects",
-        link: "/projects",
-      },
-      {
-        name: "press",
-        link: "/press",
-      },
-      {
-        name: "Contacts",
-        link: "/contacts",
-      },
+      //   {
+      //     name: "about",
+      //     link: "/about",
+      //   },
+      //   {
+      //     name: "projects",
+      //     link: "/projects",
+      //   },
+      //   {
+      //     name: "press",
+      //     link: "/press",
+      //   },
+      //   {
+      //     name: "Contacts",
+      //     link: "/contacts",
+      //   },
     ],
   },
 };

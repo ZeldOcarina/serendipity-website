@@ -83,13 +83,15 @@ const Navbar = ({
     navbarLinks: { social, pages },
   },
   innerPage,
+  logo,
+  logoAlt,
 }) => {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useContext(AppContext);
 
   return (
     <Wrapper scrolled={false}>
       <div className="container">
-        <img src="./serendipity-logo.svg" alt="Serendipity Logo" className="logo" />
+        <img src={logo} alt={logoAlt} className="logo" />
         <div className={innerPage ? "links-container links-container--dark" : "links-container"}>
           {pages.map(({ name, link }, i) => {
             return (

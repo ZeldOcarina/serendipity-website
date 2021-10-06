@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Seo title={"Nicole Tabs"} description={""} language="en" />
+      <Seo title={"Serendipity Film Group"} description={""} language="en" />
       <Layout>
         <Hero />
         <HomeVideo />

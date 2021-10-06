@@ -31,12 +31,6 @@ const Seo = ({ title, description, language }) => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta name="theme-color" content="#ffffff" />
-
-      <link
-        href="//db.onlinewebfonts.com/c/1c615e4b617b24882e6860216a5010e6?family=StMarieW01-Light"
-        rel="stylesheet"
-        type="text/css"
-      />
     </Helmet>
   );
 };
