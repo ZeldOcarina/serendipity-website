@@ -3,9 +3,10 @@ import styled, { css } from "styled-components";
 
 const StyledSquare = styled.div`
   position: relative;
-  width: 50%;
+  width: 100%;
   padding: 5%;
   box-sizing: border-box;
+
   ${(props) => {
     return (
       props.backgroundColor &&

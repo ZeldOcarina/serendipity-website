@@ -24,6 +24,13 @@ const Wrapper = styled.nav`
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    ${respond(
+      "phone-port",
+      css`
+        width: 90%;
+      `
+    )}
   }
 
   .links-container {

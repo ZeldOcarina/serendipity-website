@@ -1,9 +1,9 @@
 function respond(breakpoint, css) {
   switch (breakpoint) {
     case "iphone-5":
-      return `@media only screen and (max-width: 21.875em) {
+      return `@media only screen and (max-width: 22.812em) {
                 ${css}
-              }`; // 350px
+              }`; // 365px
     case "phone-port":
       return `@media only screen and (max-width: 28.125em) {
                 ${css}

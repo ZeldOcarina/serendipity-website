@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledFeaturedNews = styled.div`
   color: var(--body-color);
@@ -12,6 +13,13 @@ const StyledFeaturedNews = styled.div`
     text-align: center;
     font-size: 2.7rem;
     text-transform: uppercase;
+
+    ${respond(
+      "phone-port",
+      css`
+        font-size: 2rem;
+      `
+    )}
   }
 
   .bottom-container {
@@ -24,6 +32,19 @@ const StyledFeaturedNews = styled.div`
   .news-container {
     width: 65%;
     font-size: 2.8rem;
+
+    ${respond(
+      "tab-land",
+      css`
+        width: 100%;
+      `
+    )}
+    ${respond(
+      "tab-port",
+      css`
+        width: 80%;
+      `
+    )}
   }
 
   .single-new {
@@ -31,15 +52,38 @@ const StyledFeaturedNews = styled.div`
     align-items: center;
     gap: 3rem;
 
+    ${respond(
+      "phone-port",
+      css`
+        flex-direction: column;
+        gap: 1rem;
+      `
+    )}
+
     .date {
       text-transform: uppercase;
       font-size: 1.6rem;
       min-width: max-content;
       display: block;
+
+      ${respond(
+        "phone-port",
+        css`
+          font-size: 1.4rem;
+        `
+      )}
     }
 
     .excerpt {
       color: #55596d;
+
+      ${respond(
+        "phone-port",
+        css`
+          font-size: 1.6rem;
+          text-align: center;
+        `
+      )}
     }
   }
 

@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledHero = styled.section`
   height: 100vh;
@@ -10,18 +11,58 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
 
+  ${respond(
+    "phone-land",
+    css`
+      height: 180vh;
+    `
+  )}
+  ${respond(
+    "phone-port",
+    css`
+      height: 100vh;
+    `
+  )}
+
   .text-container {
     text-align: center;
     width: 37%;
     transform: translateY(-6rem);
 
+    ${respond(
+      "tab-port",
+      css`
+        width: 90%;
+      `
+    )}
+
     h1 {
       font-size: 6rem;
       line-height: 1.3;
+
+      ${respond(
+        "phone-land",
+        css`
+          font-size: 5rem;
+        `
+      )}
+      ${respond(
+        "phone-port",
+        css`
+          font-size: 4rem;
+        `
+      )}
     }
 
     p {
       font-size: 2rem;
+
+      ${respond(
+        "phone-port",
+        css`
+          font-size: 1.8rem;
+        `
+      )}
     }
   }
 
@@ -34,8 +75,32 @@ const StyledHero = styled.section`
     gap: 3rem;
     width: 100%;
 
+    ${respond(
+      "phone-port",
+      css`
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 90%;
+      `
+    )}
+    ${respond(
+      "iphone-5",
+      css`
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+      `
+    )}
+
     .logo {
       max-height: 15rem;
+
+      ${respond(
+        "phone-port",
+        css`
+          max-height: 10rem;
+        `
+      )}
     }
   }
 

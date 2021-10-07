@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Button from "../components/Button";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledFeaturedSquare = styled.div`
   color: var(--white);
@@ -18,6 +19,13 @@ const StyledFeaturedSquare = styled.div`
     font-weight: 400;
     text-align: center;
     font-size: 2.7rem;
+
+    ${respond(
+      "phone-port",
+      css`
+        font-size: 2rem;
+      `
+    )}
   }
 
   p {
@@ -25,6 +33,13 @@ const StyledFeaturedSquare = styled.div`
     font-family: "Merriweather";
     font-size: 5rem;
     width: 80%;
+
+    ${respond(
+      "phone-port",
+      css`
+        font-size: 3rem;
+      `
+    )}
   }
 
   .bottom-part {
@@ -37,6 +52,13 @@ const StyledFeaturedSquare = styled.div`
   .btn {
     text-transform: uppercase;
     color: var(--white);
+
+    ${respond(
+      "phone-port",
+      css`
+        font-size: 1.6rem;
+      `
+    )}
   }
 
   .img {

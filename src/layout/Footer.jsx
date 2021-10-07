@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "gatsby";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledFooter = styled.footer`
   background-color: var(--color-primary-light);
@@ -11,6 +12,22 @@ const StyledFooter = styled.footer`
   .container {
     display: flex;
     justify-content: space-around;
+
+    ${respond(
+      "tab-port",
+      css`
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+      `
+    )}
+    ${respond(
+      "phone-port",
+      css`
+        text-align: center;
+      `
+    )}
   }
 `;
 
