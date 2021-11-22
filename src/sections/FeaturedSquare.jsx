@@ -69,13 +69,17 @@ const StyledFeaturedSquare = styled.div`
     left: 0;
     z-index: -1;
   }
+
+  button {
+    color: var(--white);
+  }
 `;
 
 const FeaturedSquare = () => {
   const {
     strapiSerendipityWebsite: {
       serendipityHomePage: {
-        featuringSquare: { title, text, cta, link, bgImage },
+        featuringSquare: { title, text, cta, bgImage },
       },
     },
   } = useStaticQuery(query);
@@ -84,11 +88,7 @@ const FeaturedSquare = () => {
       <h2>{title}</h2>
       <div className="bottom-part">
         <p>{text}</p>
-        <Button>
-          <a className="btn" href={link}>
-            {cta}
-          </a>
-        </Button>
+        <Button>{cta}</Button>
       </div>
       <GatsbyImage className="img" image={getImage(bgImage.localFile)} alt={bgImage.alternativeText} />
     </StyledFeaturedSquare>

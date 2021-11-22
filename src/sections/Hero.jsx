@@ -94,6 +94,7 @@ const StyledHero = styled.section`
 
     .logo {
       max-height: 15rem;
+      filter: brightness(0);
 
       ${respond(
         "phone-port",
@@ -128,7 +129,6 @@ const Hero = () => {
         <h1>{title}</h1>
         <p>{description}</p>
       </div>
-
       <div className="logo-container">
         {logos.map(({ id, alternativeText, localFile: { publicURL } }) => {
           return <img className="logo" key={id} alt={alternativeText} src={publicURL} />;

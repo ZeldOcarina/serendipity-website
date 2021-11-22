@@ -78,8 +78,8 @@ const PrivacyPage = () => {
         </p>
         <p>
           Email address:&nbsp;
-          <a href="mailto:info@adyproduction.com">
-            <strong>info@adyproduction.com</strong>
+          <a href="mailto:info@monarchy.io">
+            <strong>info@monarchy.io</strong>
           </a>
         </p>
         <p>
@@ -564,8 +564,8 @@ const PrivacyPage = () => {
         <p>
           If you are a California resident and our customer, Cal. Civ. Code &sect; 1798.83 permits you to request
           certain information about our disclosure of personal information to third parties for their direct marketing
-          purposes. To request this information, please send an email to info@adyproduction.com and it's affiliate
-          websites or write us at the following address:
+          purposes. To request this information, please send an email to info@monarchy.io and it's affiliate websites or
+          write us at the following address:
         </p>
         <p>
           Monarchy LLC
@@ -614,7 +614,7 @@ const PrivacyPage = () => {
           prepaid balance. We reserve the right to terminate our text message services, in whole or in part, at any time
           without notice. The information in any message may be subject to certain time lags and/or delays. You are
           responsible for managing the types of text messages you receive. If you have any questions or need help,
-          email&nbsp;info@adyproduction.com and it's affiliate websites.
+          email&nbsp;info@monarchy.io and it's affiliate websites.
         </p>
         <p>
           To stop receiving text messages from reply to the text we have sent with STOP. By enrolling in this

@@ -27,15 +27,8 @@ const Button = (props) => {
     if (!e.target.type === "button") return;
     e.target.children[0].click();
   }
-
-  function handleMouseEnter(e) {
-    e.target.children[0].style.color = "var(--body-color)";
-  }
-  function handleMouseLeave(e) {
-    e.target.children[0].style.color = "";
-  }
   return (
-    <StyledButton type="button" onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <StyledButton type="button" onClick={handleClick}>
       {props.children}
     </StyledButton>
   );
