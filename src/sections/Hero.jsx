@@ -26,7 +26,7 @@ const StyledHero = styled.section`
 
   .text-container {
     text-align: center;
-    width: 37%;
+    width: 65%;
     transform: translateY(-6rem);
 
     ${respond(
@@ -37,8 +37,12 @@ const StyledHero = styled.section`
     )}
 
     h1 {
-      font-size: 6rem;
+      font-size: 5rem;
       line-height: 1.3;
+      text-transform: uppercase;
+      font-family: "adobe-caslon-pro", serif;
+      font-weight: 700;
+      font-style: normal;
 
       ${respond(
         "phone-land",
@@ -56,6 +60,8 @@ const StyledHero = styled.section`
 
     p {
       font-size: 2rem;
+      width: 70%;
+      margin: 0 auto;
 
       ${respond(
         "phone-port",

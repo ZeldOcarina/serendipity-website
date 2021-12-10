@@ -1,13 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
   background-color: transparent;
   border: 1px solid var(--white);
   border-radius: 5px;
   padding: 2rem 5rem;
-  cursor: pointer;
   transition: all 0.2s ease-in-out;
+  ${(props) => {
+    console.log(props.disabled);
+
+    return props.disabled
+      ? css`
+          cursor: default;
+        `
+      : css`
+          cursor: pointer;
+        `;
+  }}
 
   a {
     &:hover {
@@ -28,7 +38,7 @@ const Button = (props) => {
     e.target.children[0].click();
   }
   return (
-    <StyledButton type="button" onClick={handleClick}>
+    <StyledButton type="button" onClick={props.disabled ? null : handleClick} disabled={props.disabled}>
       {props.children}
     </StyledButton>
   );

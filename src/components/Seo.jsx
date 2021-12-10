@@ -12,6 +12,7 @@ const Seo = ({ title, description, language }) => {
   return (
     <Helmet htmlAttributes={{ lang: language || "en" }}>
       <title>{title || metaTitle}</title>
+      <link rel="stylesheet" href="https://use.typekit.net/mmv4rvk.css" />
       <meta name="description" content={description || metaDescription} />
       <meta name="webmaster" content="Mattia Rasulo" />
 

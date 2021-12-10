@@ -41,7 +41,7 @@ module.exports = {
             },
             {
               family: "Merriweather",
-              variants: ["300i"],
+              variants: ["300", "300i"],
             },
           ],
         },

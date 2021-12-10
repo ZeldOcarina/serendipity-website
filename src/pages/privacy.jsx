@@ -66,7 +66,7 @@ const PrivacyPage = () => {
         </p>
         <p>By providing us with your data, you warrant to us that you are over 13 years of age.</p>
         <p>
-          <strong>Ady Production, LLC</strong>&nbsp;[is/am/are] the data controller and we are responsible for your
+          <strong>Serendipity Group Inc.</strong>&nbsp;[is/am/are] the data controller and we are responsible for your
           personal data (referred to as &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo; in this privacy notice).
         </p>
         <p>
@@ -74,12 +74,12 @@ const PrivacyPage = () => {
         </p>
         <p>Our full details are:</p>
         <p>
-          Full name of legal entity:&nbsp;<strong>Ady Production, LLC</strong>
+          Full name of legal entity:&nbsp;<strong>Serendipity Group, Inc.</strong>
         </p>
         <p>
           Email address:&nbsp;
-          <a href="mailto:info@monarchy.io">
-            <strong>info@monarchy.io</strong>
+          <a href="mailto:contact@srndpt.com">
+            <strong>contact@srndpt.com</strong>
           </a>
         </p>
         <p>
@@ -155,7 +155,7 @@ const PrivacyPage = () => {
         </p>
         <p>
           We will only use your personal data for a purpose it was collected for or a reasonably compatible purpose if
-          necessary. For more information on this please email us at support@monarchy.io and it's affiliate websites. In
+          necessary. For more information on this please email us at contact@srndpt.com and it's affiliate websites. In
           case we need to use your details for an unrelated new purpose we will let you know and explain the legal
           grounds for processing.
         </p>
@@ -185,7 +185,7 @@ const PrivacyPage = () => {
         <p>
           You can ask us or third parties to stop sending you marketing messages at any time [by logging into the
           website and checking or unchecking relevant boxes to adjust your marketing preferences] OR [by following the
-          opt-out links on any marketing message sent to you or] OR by emailing us at support@monarchy.io and it's
+          opt-out links on any marketing message sent to you or] OR by emailing us at contact@srndpt.com and it's
           affiliate websites at any time].
         </p>
         <p>
@@ -283,7 +283,7 @@ const PrivacyPage = () => {
         </p>
         <p>
           If you wish to exercise any of the rights set out above, please email us at&nbsp;
-          <strong>support@monarchy.io and it's affiliate websites</strong>.
+          <strong>contact@srndpt.com and it's affiliate websites</strong>.
         </p>
         <p>
           You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However,
@@ -525,7 +525,7 @@ const PrivacyPage = () => {
           We may use autoresponders to communicate with you by email. To protect your privacy, we use a verified opt-in
           system for such communications and you can always opt-out of such communications using the links contained in
           each autoresponder message. If you have difficulties opting out, you may contact us by sending an email to
-          support@monarchy.io and it's affiliate websites, or sending us mail to the address listed below.
+          contact@srndpt.com and it's affiliate websites, or sending us mail to the address listed below.
         </p>
         <p>
           <strong>Policy Changes</strong>
@@ -546,7 +546,8 @@ const PrivacyPage = () => {
         </p>
         <p>
           Any questions or concerns about this website privacy policy should be brought to our attention by sending an
-          email info@monarchy.io and it's affiliate websites and providing us with information relating to your concern.
+          email contact@srndpt.com and it's affiliate websites and providing us with information relating to your
+          concern.
         </p>
         <p>You may also mail your concerns to us at the following address:</p>
         <p>
@@ -564,8 +565,8 @@ const PrivacyPage = () => {
         <p>
           If you are a California resident and our customer, Cal. Civ. Code &sect; 1798.83 permits you to request
           certain information about our disclosure of personal information to third parties for their direct marketing
-          purposes. To request this information, please send an email to info@monarchy.io and it's affiliate websites or
-          write us at the following address:
+          purposes. To request this information, please send an email to contact@srndpt.com and it's affiliate websites
+          or write us at the following address:
         </p>
         <p>
           Monarchy LLC
@@ -614,7 +615,7 @@ const PrivacyPage = () => {
           prepaid balance. We reserve the right to terminate our text message services, in whole or in part, at any time
           without notice. The information in any message may be subject to certain time lags and/or delays. You are
           responsible for managing the types of text messages you receive. If you have any questions or need help,
-          email&nbsp;info@monarchy.io and it's affiliate websites.
+          email&nbsp;contact@srndpt.com and it's affiliate websites.
         </p>
         <p>
           To stop receiving text messages from reply to the text we have sent with STOP. By enrolling in this

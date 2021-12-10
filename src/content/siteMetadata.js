@@ -1,6 +1,6 @@
 module.exports = {
   siteUrl: "https://serendipity-website.vercel.app/",
-  title: "Serendipity Film Group",
+  title: "Serendipity Group Inc.",
   description:
     "We produce films about fascinating people and stories that inspire, entertain and capture the imagination. Aligned with strategic partnerships, we are committed to deliver dynamic entertainment to our audiences.",
   navbarLinks: {
