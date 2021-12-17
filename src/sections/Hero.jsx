@@ -40,7 +40,7 @@ const StyledHero = styled.section`
       font-size: 5rem;
       line-height: 1.3;
       text-transform: uppercase;
-      font-family: "adobe-caslon-pro", serif;
+      font-family: var(--new-font);
       font-weight: 700;
       font-style: normal;
 

@@ -5,6 +5,9 @@ require("dotenv").config({
 });
 
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: siteMetadata,
   plugins: [
     "gatsby-plugin-styled-components",
@@ -43,6 +46,7 @@ module.exports = {
               family: "Merriweather",
               variants: ["300", "300i"],
             },
+            { family: "Asul", variants: ["700"] },
           ],
         },
       },

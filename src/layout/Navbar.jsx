@@ -7,7 +7,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import AppContext from "../context/AppContext";
 
 const Wrapper = styled.nav`
-  position: fixed;
+  position: ${({ homePage }) => (homePage ? css`absolute` : css`static`)};
+  background-color: ${({ homePage }) => (homePage ? css`transparent` : css`var(--color-primary-light)`)};
   top: 0;
   left: 0;
   width: 100%;
@@ -65,7 +66,7 @@ const Wrapper = styled.nav`
 
   .nav-link {
     color: var(--body-color);
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .mobile-menu-activator {
@@ -92,13 +93,16 @@ const Navbar = ({
   innerPage,
   logo,
   logoAlt,
+  homePage,
 }) => {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useContext(AppContext);
 
   return (
-    <Wrapper scrolled={false}>
+    <Wrapper scrolled={false} homePage={homePage}>
       <div className="container">
-        <img src={logo} alt={logoAlt} className="logo" />
+        <Link to="/">
+          <img src={logo} alt={logoAlt} className="logo" />
+        </Link>
         <div className={innerPage ? "links-container links-container--dark" : "links-container"}>
           {pages.map(({ name, link }, i) => {
             return (

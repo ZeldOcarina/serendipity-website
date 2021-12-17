@@ -1,26 +1,14 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import React from "react";
 import styled, { css } from "styled-components";
 import respond from "../styles/abstracts/mediaqueries";
 
+import Button from "../components/Button";
+import SectionTitle from "../components/SectionTitle";
+
 const StyledFeaturedNews = styled.div`
   color: var(--body-color);
   height: 100%;
-
-  h2 {
-    font-family: var(--body-font);
-    font-weight: 400;
-    text-align: center;
-    font-size: 2.7rem;
-    text-transform: uppercase;
-
-    ${respond(
-      "phone-port",
-      css`
-        font-size: 2rem;
-      `
-    )}
-  }
 
   .bottom-container {
     height: 100%;
@@ -100,10 +88,11 @@ const FeaturedNews = () => {
   } = useStaticQuery(query);
   return (
     <StyledFeaturedNews>
-      <h2>PRESS</h2>
+      <SectionTitle>PRESS</SectionTitle>
       <div className="bottom-container">
         <div className="news-container">
           {serendipityNews.map(({ id, homeExcerpt, articleDate }, i) => {
+            if (i > 2) return "";
             return (
               <React.Fragment key={id}>
                 <article className="single-new">
@@ -114,6 +103,9 @@ const FeaturedNews = () => {
               </React.Fragment>
             );
           })}
+          <Button alternative backgroundColor="rgba(255, 255, 255, 0.25)" uppercase>
+            <Link to="/press">View All</Link>
+          </Button>
         </div>
       </div>
     </StyledFeaturedNews>

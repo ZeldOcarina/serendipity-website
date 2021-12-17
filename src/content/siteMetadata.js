@@ -16,6 +16,10 @@ module.exports = {
         name: "home",
         link: "/",
       },
+      {
+        name: "press",
+        link: "/press",
+      },
       //   {
       //     name: "about",
       //     link: "/about",

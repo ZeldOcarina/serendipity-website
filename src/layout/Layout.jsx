@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 import logo from "../images/serendipity-logo.svg";
 
-const Layout = ({ children, innerPage }) => {
+const Layout = ({ children, innerPage, homePage }) => {
   const {
     site: { siteMetadata },
     strapiSerendipityWebsite: {
@@ -17,7 +17,13 @@ const Layout = ({ children, innerPage }) => {
 
   return (
     <>
-      <Navbar siteMetadata={siteMetadata} innerPage={innerPage || false} logo={logo} logoAlt={alternativeText} />
+      <Navbar
+        siteMetadata={siteMetadata}
+        innerPage={innerPage || false}
+        homePage={homePage || false}
+        logo={logo}
+        logoAlt={alternativeText}
+      />
       {children}
       <Footer siteMetadata={siteMetadata} logo={logo} logoAlt={alternativeText} />
       <MobileNavbar siteMetadata={siteMetadata} />

@@ -72,4 +72,10 @@ export default createGlobalStyle`
   .red {
     color: red;
   }
+
+  .inner-container {
+    width: 50%;
+    margin-left: 15%;
+    padding-bottom: 6rem;
+  }
   `;

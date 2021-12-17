@@ -16,6 +16,7 @@ export default createGlobalStyle`
     //FONT FAMILY
     --title-font: "StMarieW01-Light", serif;
     --alternative-font: "Work Sans", sans-serif;
+    --new-font: "Asul", sans-serif;
     --body-font: "Sarabun", sans-serif;
     --bold: 700;
 
