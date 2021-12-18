@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledInnerPageHeader = styled.div`
   display: flex;
@@ -7,10 +8,24 @@ const StyledInnerPageHeader = styled.div`
   gap: 3rem;
   margin-bottom: 1rem;
 
+  ${respond(
+    "laptop",
+    css`
+      gap: 2rem;
+    `
+  )}
+
   h1 {
     color: var(--color-secondary);
     font-size: 4rem;
     text-transform: capitalize;
+
+    ${respond(
+      "laptop",
+      css`
+        font-size: 3.5rem;
+      `
+    )}
   }
 
   .rectangle {
@@ -18,6 +33,13 @@ const StyledInnerPageHeader = styled.div`
     width: 100%;
     height: 2.5rem;
     background-color: var(--color-secondary);
+
+    ${respond(
+      "laptop",
+      css`
+        height: 2rem;
+      `
+    )}
   }
 `;
 

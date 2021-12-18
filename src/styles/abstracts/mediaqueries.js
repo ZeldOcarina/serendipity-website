@@ -23,7 +23,7 @@ function respond(breakpoint, css) {
     case "laptop":
       return `@media only screen and (max-width: 102.18em) {
                 ${css}
-              }`; // 450px
+              }`; // 1634px
     case "big-laptop":
       return `@media only screen and (max-width: 1920px) {
                 ${css}

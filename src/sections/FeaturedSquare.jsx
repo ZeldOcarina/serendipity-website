@@ -32,17 +32,29 @@ const StyledFeaturedSquare = styled.div`
 
   .title-container {
     position: relative;
+    width: min-content;
+    text-align: center;
+  }
+
+  .women,
+  .vertical-title {
+    display: inline-block;
+  }
+
+  .women {
+    transform: translateX(-10%);
   }
 
   .vertical-title {
     position: absolute;
     top: 0;
-    right: 16rem;
+    right: 0;
     display: flex;
     flex-direction: column;
     color: var(--title-secondary-color);
     font-size: 2.3rem;
     text-align: center;
+    transform: translateX(-50%);
   }
 
   .title-text,
@@ -55,16 +67,9 @@ const StyledFeaturedSquare = styled.div`
     line-height: 1;
   }
 
-  .women {
-    transform: translateX(-3rem);
-    display: inline-block;
-  }
-
   .title-text {
     text-align: center;
     font-size: 6rem;
-    width: 80%;
-    margin: 0 auto;
     color: #eedcc6;
     font-weight: bold;
 

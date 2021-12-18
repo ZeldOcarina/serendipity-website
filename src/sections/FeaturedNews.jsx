@@ -22,6 +22,13 @@ const StyledFeaturedNews = styled.div`
     font-size: 2.8rem;
 
     ${respond(
+      "laptop",
+      css`
+        width: 90%;
+        font-size: 2.3rem;
+      `
+    )}
+    ${respond(
       "tab-land",
       css`
         width: 100%;

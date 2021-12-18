@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
+import respond from "../abstracts/mediaqueries";
 
 export default createGlobalStyle`
   .image-bw {
@@ -77,5 +78,12 @@ export default createGlobalStyle`
     width: 50%;
     margin-left: 15%;
     padding-bottom: 6rem;
+
+    ${respond(
+      "laptop",
+      css`
+        width: 60%;
+      `
+    )}
   }
   `;
