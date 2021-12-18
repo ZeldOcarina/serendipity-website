@@ -27,7 +27,7 @@ const StyledHomeTeamMember = styled.article`
 
   .name {
     font-family: var(--new-font);
-    font-weight: 700;
+    font-weight: 400;
     font-size: 2rem;
   }
 

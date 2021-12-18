@@ -18,8 +18,8 @@ const StyledFeaturedSquare = styled.div`
     text-align: center;
     font-size: 2.1rem;
     color: var(--title-secondary-color);
-    font-family: adobe-garamond-pro, serif;
-    font-weight: 600;
+    font-family: var(--body-font);
+    font-weight: 400;
     font-style: normal;
 
     ${respond(

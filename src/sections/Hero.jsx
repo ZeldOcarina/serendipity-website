@@ -41,7 +41,7 @@ const StyledHero = styled.section`
       line-height: 1.3;
       text-transform: uppercase;
       font-family: var(--new-font);
-      font-weight: 700;
+      font-weight: 400;
       font-style: normal;
 
       ${respond(
