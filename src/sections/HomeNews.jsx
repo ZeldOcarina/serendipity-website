@@ -21,13 +21,19 @@ const StyledHomeNews = styled.div`
 `;
 
 function HomeNews() {
-  const { isiPhone5 } = useContext(AppContext);
+  const { isiPhone5, isPhonePort } = useContext(AppContext);
+
+  console.log("isiPhone5");
+  console.log(isiPhone5);
+  console.log("isPhonePort");
+  console.log(isPhonePort);
+
   return (
     <StyledHomeNews>
-      <Square mobileHeight={isiPhone5 ? 150 : 70}>
+      <Square mobileHeight={isiPhone5 && !isPhonePort ? 150 : 75}>
         <FeaturedSquare />
       </Square>
-      <Square backgroundColor="var(--color-primary)" mobileHeight={isiPhone5 ? 100 : 60}>
+      <Square backgroundColor="var(--color-primary)" mobileHeight={isiPhone5 && !isPhonePort ? 100 : undefined}>
         <FeaturedNews />
       </Square>
     </StyledHomeNews>
