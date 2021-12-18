@@ -10,10 +10,18 @@ function respond(breakpoint, css) {
       return `@media only screen and (max-width: ${400 / BASE_PIXELS}em) {
                 ${css}
               }`; // 400px
+    case "iphone-8-plus":
+      return `@media only screen and (max-width: ${414 / BASE_PIXELS}em) {
+                ${css}
+              }`;
     case "phone-port":
       return `@media only screen and (max-width: ${450 / BASE_PIXELS}em) {
                 ${css}
               }`; // 450px
+    case "nexus-7":
+      return `@media only screen and (max-width: ${600 / BASE_PIXELS}em) {
+                ${css}
+              }`; // 600px
     case "phone-land":
       return `@media only screen and (max-width: ${900 / BASE_PIXELS}em) {
                 ${css}
