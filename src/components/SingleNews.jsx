@@ -1,20 +1,40 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { v4 as uuidv4 } from "uuid";
 
 import parseStringDate from "../utils/parseStringDate";
 import Button from "../components/Button";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledSingleNews = styled.article`
   &:not(:last-child) {
     margin-bottom: 5rem;
   }
 
+  h2,
+  p,
+  .date {
+    ${respond(
+      "iphone-5",
+      css`
+        width: 90%;
+        margin: 0 auto;
+      `
+    )}
+  }
+
   .image {
     max-width: 100%;
     margin-bottom: 2rem;
+
+    ${respond(
+      "iphone-5",
+      css`
+        margin: 2rem 0 4rem 0;
+      `
+    )}
   }
 
   .date {
@@ -31,6 +51,13 @@ const StyledSingleNews = styled.article`
 
   .button {
     margin-top: 1.6rem;
+
+    ${respond(
+      "iphone-5",
+      css`
+        margin-left: 5%;
+      `
+    )}
   }
 `;
 

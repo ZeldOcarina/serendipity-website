@@ -78,11 +78,25 @@ export default createGlobalStyle`
     width: 50%;
     margin-left: 15%;
     padding-bottom: 6rem;
+    min-height: 81vh;
 
     ${respond(
       "laptop",
       css`
         width: 60%;
+      `
+    )}
+    ${respond(
+      "phone-land",
+      css`
+        width: 90%;
+        margin: 0 auto;
+      `
+    )}
+    ${respond(
+      "iphone-5",
+      css`
+        width: 100%;
       `
     )}
   }

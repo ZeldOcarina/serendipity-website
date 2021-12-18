@@ -18,9 +18,9 @@ const StyledHero = styled.section`
     `
   )}
   ${respond(
-    "phone-port",
+    "iphone-5",
     css`
-      height: 100vh;
+      height: 150vh;
     `
   )}
 
@@ -33,6 +33,12 @@ const StyledHero = styled.section`
       "tab-port",
       css`
         width: 90%;
+      `
+    )}
+    ${respond(
+      "phone-port",
+      css`
+        width: 100%;
       `
     )}
 
@@ -106,6 +112,12 @@ const StyledHero = styled.section`
         "phone-port",
         css`
           max-height: 10rem;
+        `
+      )}
+      ${respond(
+        "small-phone",
+        css`
+          max-height: 5rem;
         `
       )}
     }

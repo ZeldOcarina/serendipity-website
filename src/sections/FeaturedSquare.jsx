@@ -34,6 +34,13 @@ const StyledFeaturedSquare = styled.div`
     position: relative;
     width: min-content;
     text-align: center;
+
+    ${respond(
+      "phone-port",
+      css`
+        width: 100%;
+      `
+    )}
   }
 
   .women,
@@ -43,18 +50,6 @@ const StyledFeaturedSquare = styled.div`
 
   .women {
     transform: translateX(-10%);
-  }
-
-  .vertical-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    color: var(--title-secondary-color);
-    font-size: 2.3rem;
-    text-align: center;
-    transform: translateX(-50%);
   }
 
   .title-text,
@@ -76,9 +71,46 @@ const StyledFeaturedSquare = styled.div`
     ${respond(
       "phone-port",
       css`
-        font-size: 3rem;
+        font-size: 4rem;
+        line-height: 1.2;
       `
     )};
+  }
+
+  .vertical-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    color: var(--title-secondary-color);
+    font-size: 2.3rem;
+    text-align: center;
+    transform: translateX(-50%);
+
+    ${respond(
+      "phone-port",
+      css`
+        font-size: 1.75rem;
+        transform: translateX(-150%);
+        line-height: 1.1;
+      `
+    )}
+
+    ${respond(
+      "small-phone",
+      css`
+        font-size: 1.75rem;
+        transform: translateX(-115%);
+        line-height: 1.1;
+      `
+    )}
+    ${respond(
+      "iphone-5",
+      css`
+        transform: translateX(-60%);
+      `
+    )}
   }
 
   .bottom-part {
@@ -122,6 +154,18 @@ const StyledFeaturedSquare = styled.div`
     display: flex;
     gap: 1rem;
     align-items: center;
+
+    ${respond(
+      "iphone-5",
+      css`
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        justify-content: center;
+        justify-items: center;
+        margin-bottom: 2rem;
+      `
+    )}
   }
 
   button {

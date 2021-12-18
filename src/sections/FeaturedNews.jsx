@@ -15,6 +15,14 @@ const StyledFeaturedNews = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    ${respond(
+      "phone-port",
+      css`
+        height: max-content;
+        margin-top: 3rem;
+      `
+    )}
   }
 
   .news-container {
@@ -38,6 +46,12 @@ const StyledFeaturedNews = styled.div`
       "tab-port",
       css`
         width: 80%;
+      `
+    )}
+    ${respond(
+      "phone-port",
+      css`
+        width: 90%;
       `
     )}
   }

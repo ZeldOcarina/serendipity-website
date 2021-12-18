@@ -76,7 +76,7 @@ const Wrapper = styled.nav`
       "tab-port",
       css`
         display: block;
-        color: var(--color-primary);
+        color: var(--body-color);
         position: absolute;
         right: 10%;
         width: 6%;

@@ -9,10 +9,12 @@ function ContextProvider(props) {
   const [submitting, setSubmitting] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isTabLand = useMediaQuery({ query: "(max-width: 75em)" });
-  const isTabPort = useMediaQuery({ query: "(max-width: 56.25em)" });
-  const isPhoneLand = useMediaQuery({ query: "(max-height: 400px)" });
-  const isPhonePort = useMediaQuery({ query: "(max-width: 28.125em)" });
+  const BASE_PIXELS = 16;
+  const isTabLand = useMediaQuery({ query: `(max-width: ${1200 / BASE_PIXELS}em)` });
+  const isTabPort = useMediaQuery({ query: `(max-width: ${900 / BASE_PIXELS}em)` });
+  const isPhoneLand = useMediaQuery({ query: `(max-width: ${900 / BASE_PIXELS}em)` });
+  const isPhonePort = useMediaQuery({ query: `(max-width: ${450 / BASE_PIXELS}em)` });
+  const isiPhone5 = useMediaQuery({ query: `(max-width: ${365 / BASE_PIXELS}em` });
 
   return (
     <AppContext.Provider
@@ -25,6 +27,7 @@ function ContextProvider(props) {
         isTabPort,
         isPhoneLand,
         isPhonePort,
+        isiPhone5,
         isMobileMenuOpen,
         setIsMobileMenuOpen,
         submitting,

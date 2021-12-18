@@ -13,7 +13,7 @@ const StyledMobileNavbar = styled.div`
   top: 0;
   left: 0;
   z-index: 200;
-  background-color: rgba(249, 65, 151, 0.96);
+  background-color: var(--color-primary-light);
   transform: translateX(200vw);
   transition: all 0.3s ease-in-out;
 
@@ -34,7 +34,7 @@ const StyledMobileNavbar = styled.div`
     top: 5rem;
     width: 10%;
     height: auto;
-    color: var(--white);
+    color: var(--body-color);
 
     ${respond(
       "phone-land",
@@ -45,7 +45,7 @@ const StyledMobileNavbar = styled.div`
   }
 
   .mobile-navbar {
-    color: var(--white);
+    color: var(--body-color);
     text-transform: uppercase;
     font-family: var(--body-font);
     font-size: 3.2rem;
@@ -75,7 +75,7 @@ const StyledMobileNavbar = styled.div`
       }
     }
     &__top-link {
-      color: var(--white);
+      color: var(--body-color);
       font-family: var(--alternative-font);
       font-weight: 400;
     }

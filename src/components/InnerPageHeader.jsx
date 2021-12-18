@@ -19,6 +19,7 @@ const StyledInnerPageHeader = styled.div`
     color: var(--color-secondary);
     font-size: 4rem;
     text-transform: capitalize;
+    min-width: max-content;
 
     ${respond(
       "laptop",

@@ -11,8 +11,14 @@ const StyledHomeTeamMember = styled.article`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: ${({ circleWidth }) => circleWidth};
-    height: ${({ circleWidth }) => circleWidth};
+    width: ${({ circleWidth }) =>
+      css`
+        ${circleWidth}rem
+      `};
+    height: ${({ circleWidth }) =>
+      css`
+        ${circleWidth}rem
+      `};
     border-radius: 50%;
     margin-bottom: 1.5rem;
     gap: 0.7rem;
