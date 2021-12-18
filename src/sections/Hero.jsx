@@ -20,7 +20,7 @@ const StyledHero = styled.section`
   ${respond(
     "phone-port",
     css`
-      height: 100vh;
+      height: 80vh;
     `
   )}
   ${respond(
@@ -38,7 +38,7 @@ const StyledHero = styled.section`
   ${respond(
     "iphone-8-plus",
     css`
-      height: 120vh;
+      height: 100vh;
     `
   )}
   ${respond(
