@@ -5,23 +5,36 @@ import respond from "../styles/abstracts/mediaqueries";
 import AppContext from "../context/AppContext";
 
 const StyledSquare = styled.div`
-  --mobile-height: ${(props) => props.mobileHeight + "vh" || "initial"};
   position: relative;
   width: 100%;
   padding: 5%;
   box-sizing: border-box;
 
+  ${respond(
+    "phone-port",
+    css`
+      height: 70vh !important;
+    `
+  )}
+  ${respond(
+    "iphone-8-plus",
+    css`
+      height: 80vh !important;
+    `
+  )}
+
   ${(props) => {
     return (
-      props.mobileHeight &&
+      props.smallMobileSquare &&
       respond(
         "phone-port",
         css`
-          height: var(--mobile-height);
+          height: max-content !important;
+          padding: 5rem 2rem;
         `
       )
     );
-  }}
+  }};
 
   ${(props) => {
     return (
@@ -39,14 +52,12 @@ const Square = (props) => {
   const { isPhonePort } = useContext(AppContext);
 
   useEffect(() => {
-    console.log(isPhonePort);
-    if (isPhonePort) return;
     const currentWidth = squareRef.current.offsetWidth;
     squareRef.current.style.height = `${currentWidth}px`;
   }, [isPhonePort]);
 
   return (
-    <StyledSquare ref={squareRef} backgroundColor={props.backgroundColor} mobileHeight={props.mobileHeight}>
+    <StyledSquare ref={squareRef} backgroundColor={props.backgroundColor} smallMobileSquare={props.smallMobileSquare}>
       {props.children}
     </StyledSquare>
   );
