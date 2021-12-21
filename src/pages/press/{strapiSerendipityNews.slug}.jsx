@@ -10,9 +10,15 @@ const StyledSingleNewsPage = styled.main`
 `;
 
 const SingleNewsPage = ({ data: { strapiSerendipityNews } }) => {
+  console.log(strapiSerendipityNews);
   return (
     <>
-      <Seo title={"Serendipity Film Group | Single News"} description={""} language="en" homePage={false} />
+      <Seo
+        title={`Serendipity Group | ${strapiSerendipityNews.title}`}
+        description={strapiSerendipityNews.homeExcerpt}
+        language="en"
+        homePage={false}
+      />
       <Layout>
         <StyledSingleNewsPage className="inner-container">
           <SingleNews {...strapiSerendipityNews} />
@@ -30,6 +36,7 @@ export const query = graphql`
       articleDate
       author
       media
+      homeExcerpt
       featuredImage {
         localFile {
           childImageSharp {

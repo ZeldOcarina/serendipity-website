@@ -44,7 +44,7 @@ const Styled404Page = styled.main`
 const Error = () => {
   return (
     <>
-      <Seo title="Serendipity Film Group | Error" />
+      <Seo title="Serendipity Group | 404 Not Found" />
       <Styled404Page className="">
         <div className="content">
           <h1>We cannot find this page</h1>

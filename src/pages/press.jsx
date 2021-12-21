@@ -23,7 +23,12 @@ const PressPage = ({
 
   return (
     <>
-      <Seo title={"Serendipity Film Group | News"} description={""} language="en" homePage={false} />
+      <Seo
+        title={"Serendipity Group | Press"}
+        description={"Serendipity group press releases"}
+        language="en"
+        homePage={false}
+      />
       <Layout>
         <StyledPressPage>
           <div className="inner-container">

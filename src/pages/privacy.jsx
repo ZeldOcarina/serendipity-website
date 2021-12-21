@@ -15,7 +15,7 @@ const StyledPrivacyPage = styled.main`
 const PrivacyPage = () => {
   return (
     <StyledPrivacyPage>
-      <Seo title={"Serendipity Film Group | Privacy"} language="en" />
+      <Seo title={"Serendipity Group | Privacy Policy"} language="en" />
       <Layout>
         <div className="container">
           <h1>Privacy Policy</h1>
