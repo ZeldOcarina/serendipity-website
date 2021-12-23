@@ -16,12 +16,18 @@ const StyledFeaturedSquare = styled.div`
   h2 {
     //font-family: var(--body-font);
     text-align: center;
-    font-size: 2.1rem;
+    font-size: 2.5rem;
     color: var(--title-secondary-color);
     font-family: var(--body-font);
     font-weight: 400;
     font-style: normal;
 
+    ${respond(
+      "laptop",
+      css`
+        font-size: 1.6rem;
+      `
+    )}
     ${respond(
       "phone-port",
       css`

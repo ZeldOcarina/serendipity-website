@@ -83,9 +83,9 @@ const PrivacyPage = () => {
               <strong>contact@srndpt.com</strong>
             </a>
           </p>
-          <p>
+          {/* <p>
             Postal address:&nbsp;<strong>1128 Sunset point Rd Clearwater FL 33755 unit&nbsp; 402</strong>
-          </p>
+          </p> */}
           <p>2. WHAT DATA DO WE COLLECT ABOUT YOU, FOR WHAT PURPOSE AND ON WHAT GROUND WE PROCESS IT</p>
           <p>We may process the following categories of personal data about you:</p>
           <p>

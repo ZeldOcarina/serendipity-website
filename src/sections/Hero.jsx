@@ -129,19 +129,20 @@ const StyledHero = styled.section`
     )}
 
     .logo {
-      max-height: 15rem;
+      max-height: 6rem;
+      width: 16rem;
       filter: brightness(0);
 
       ${respond(
         "phone-port",
         css`
-          max-height: 10rem;
+          max-height: 6rem;
         `
       )}
       ${respond(
         "small-phone",
         css`
-          max-height: 5rem;
+          max-height: 4rem;
         `
       )}
     }
