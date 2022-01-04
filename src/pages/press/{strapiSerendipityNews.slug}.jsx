@@ -10,7 +10,7 @@ const StyledSingleNewsPage = styled.main`
 `;
 
 const SingleNewsPage = ({ data: { strapiSerendipityNews } }) => {
-  console.log(strapiSerendipityNews);
+  //console.log(strapiSerendipityNews);
   return (
     <>
       <Seo
