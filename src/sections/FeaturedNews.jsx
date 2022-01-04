@@ -135,7 +135,7 @@ const FeaturedNews = () => {
 
 const query = graphql`
   query HomeNews {
-    allStrapiSerendipityNews(limit: 3, sort: { fields: published_at }) {
+    allStrapiSerendipityNews(limit: 3, sort: { fields: published_at, order: DESC }) {
       serendipityNews: nodes {
         id
         homeExcerpt
