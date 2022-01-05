@@ -64,14 +64,16 @@ const StyledSingleNews = styled.article`
 const SingleNews = ({
   articleBody,
   featuredImage,
-  featuredImage: { alternativeText },
   articleDate,
   title,
   author,
   media,
   excerpt,
   slug,
+  externalUrl,
+  externalUrlButtonText,
 }) => {
+  const alternativeText = featuredImage?.alternativeText || "Press Image";
   const excerptParagraph = articleBody.split("\n\n")[0].split(" ").slice(0, 55);
   const paragraphs = excerpt ? [excerptParagraph.join(" ") + " [...]"] : articleBody.split("\n\n");
   const image = getImage(featuredImage?.localFile?.childImageSharp) || undefined;
@@ -101,6 +103,18 @@ const SingleNews = ({
           uppercase
         >
           <Link to={slug}>Read More</Link>
+        </Button>
+      )}
+      {!excerpt && externalUrl && (
+        <Button
+          className="button"
+          backgroundColor="var(--color-primary-light)"
+          hoverBackgroundColor="var(--color-primary-light)"
+          hoverBorderColor="var(--color-primary-light)"
+          fontSize="16"
+          uppercase
+        >
+          <a href={externalUrl}>{externalUrlButtonText}</a>
         </Button>
       )}
     </StyledSingleNews>

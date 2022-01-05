@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 
 import Square from "../components/Square";
@@ -6,7 +6,7 @@ import FeaturedSquare from "../sections/FeaturedSquare";
 import FeaturedNews from "../sections/FeaturedNews";
 import respond from "../styles/abstracts/mediaqueries";
 
-import AppContext from "../context/AppContext";
+//import AppContext from "../context/AppContext";
 
 const StyledHomeNews = styled.div`
   display: flex;

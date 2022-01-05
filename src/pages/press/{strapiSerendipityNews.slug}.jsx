@@ -47,6 +47,8 @@ export const query = graphql`
       }
       title
       strapiId
+      externalUrl
+      externalUrlButtonText
     }
   }
 `;

@@ -57,7 +57,7 @@ export const query = graphql`
         featuredImage {
           localFile {
             childImageSharp {
-              gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
             }
           }
           alternativeText
