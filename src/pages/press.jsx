@@ -35,7 +35,7 @@ const PressPage = ({
             <InnerPageHeader>Press</InnerPageHeader>
             <div className="news-container">
               {news.map((news) => {
-                return <SingleNews {...news} key={news.strapiId} excerpt />;
+                return <SingleNews {...news} key={news.strapiId} />;
               })}
             </div>
           </div>
@@ -65,6 +65,8 @@ export const query = graphql`
         title
         strapiId
         slug
+        externalUrl
+        externalUrlButtonText
       }
     }
   }

@@ -105,7 +105,7 @@ const SingleNews = ({
           <Link to={slug}>Read More</Link>
         </Button>
       )}
-      {!excerpt && externalUrl && (
+      {externalUrl && (
         <Button
           className="button"
           backgroundColor="var(--color-primary-light)"
