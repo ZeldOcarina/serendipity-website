@@ -234,7 +234,7 @@ const query = graphql`
             alternativeText
             localFile {
               childImageSharp {
-                gatsbyImageData(placeholder: TRACED_SVG)
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }

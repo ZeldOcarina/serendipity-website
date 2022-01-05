@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require("node-sass"),
+        implementation: require("sass"),
       },
     },
     `gatsby-transformer-json`,
