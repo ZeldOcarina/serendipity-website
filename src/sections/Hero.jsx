@@ -18,6 +18,12 @@ const StyledHero = styled.section`
     `
   )}
   ${respond(
+    "tab-port",
+    css`
+      height: 100vh;
+    `
+  )}
+  ${respond(
     "phone-port",
     css`
       height: 80vh;

@@ -28,11 +28,17 @@ const StyledHomeTeam = styled.section`
 
   .container {
     display: grid;
-    grid-template-columns: repeat(4, var(--circle-width));
+    grid-template-columns: repeat(5, var(--circle-width));
     justify-content: center;
     justify-items: center;
     gap: 3rem;
 
+    ${respond(
+      "tab-land",
+      css`
+        grid-template-columns: repeat(3, var(--circle-width));
+      `
+    )}
     ${respond(
       "phone-land",
       css`
