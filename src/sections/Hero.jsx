@@ -38,13 +38,13 @@ const StyledHero = styled.section`
   ${respond(
     "iphone-8-plus",
     css`
-      height: 100vh;
+      height: 115vh;
     `
   )}
   ${respond(
     "iphone-5",
     css`
-      height: 150vh;
+      height: 155vh;
     `
   )}
 

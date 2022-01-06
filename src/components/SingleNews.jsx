@@ -114,7 +114,9 @@ const SingleNews = ({
           fontSize="16"
           uppercase
         >
-          <a href={externalUrl}>{externalUrlButtonText}</a>
+          <a href={externalUrl} target="_blank" rel="noopener noreferrer">
+            {externalUrlButtonText}
+          </a>
         </Button>
       )}
     </StyledSingleNews>

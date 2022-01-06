@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React from "react";
+import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import respond from "../styles/abstracts/mediaqueries";
+import AppContext from "../context/AppContext";
 
 const StyledFeaturedSquare = styled.div`
   color: var(--white);
@@ -32,6 +33,12 @@ const StyledFeaturedSquare = styled.div`
       "phone-port",
       css`
         font-size: 2rem;
+      `
+    )}
+    ${respond(
+      "iphone-5",
+      css`
+        font-size: 1.4rem;
       `
     )}
   }
@@ -124,6 +131,13 @@ const StyledFeaturedSquare = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+
+    ${respond(
+      "iphone-5",
+      css`
+        gap: 1rem;
+      `
+    )}
   }
 
   .btn {
@@ -166,7 +180,7 @@ const StyledFeaturedSquare = styled.div`
       css`
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 1rem;
         justify-content: center;
         justify-items: center;
         margin-bottom: 2rem;
@@ -183,14 +197,32 @@ const FeaturedSquare = () => {
   const {
     strapiSerendipityWebsite: {
       serendipityHomePage: {
-        featuringSquare: { title, bgImage, abcLogo, moviePremiereDate, bottomMidText, huluLogo },
+        featuringSquare: {
+          titleTopLine,
+          titleSecondLine,
+          bgImage,
+          abcLogo,
+          moviePremiereDate,
+          bottomMidText,
+          huluLogo,
+        },
       },
     },
   } = useStaticQuery(query);
 
+  const { isPhonePort } = useContext(AppContext);
+
   return (
     <StyledFeaturedSquare>
-      <h2>{title}</h2>
+      {isPhonePort ? (
+        <h2>
+          {titleTopLine}
+          <br />
+          {titleSecondLine}
+        </h2>
+      ) : (
+        <h2>{`${titleTopLine} ${titleSecondLine}`}</h2>
+      )}
       <div className="bottom-part">
         <p>An ABC Limited Series</p>
         <div className="title-container">
@@ -221,7 +253,8 @@ const query = graphql`
       serendipityHomePage {
         featuringSquare {
           link
-          title
+          titleTopLine
+          titleSecondLine
           bgImage {
             alternativeText
             localFile {
