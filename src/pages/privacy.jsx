@@ -553,7 +553,7 @@ const PrivacyPage = () => {
             email contact@srndpt.com and it's affiliate websites and providing us with information relating to your
             concern.
           </p>
-          <p>You may also mail your concerns to us at the following address:</p>
+          {/* <p>You may also mail your concerns to us at the following address:</p>
           <p>
             Monarchy LLC
             <br />
@@ -563,16 +563,16 @@ const PrivacyPage = () => {
             <br />
             FL 33755
           </p>
-          <p>
-            <strong>California Privacy Rights</strong>
-          </p>
+          <p> */}
+          <strong>California Privacy Rights</strong>
+          {/* </p> */}
           <p>
             If you are a California resident and our customer, Cal. Civ. Code &sect; 1798.83 permits you to request
             certain information about our disclosure of personal information to third parties for their direct marketing
             purposes. To request this information, please send an email to contact@srndpt.com and it's affiliate
-            websites or write us at the following address:
+            websites.
           </p>
-          <p>
+          {/* <p>
             Monarchy LLC
             <br />
             1128 Sunset point RD
@@ -580,8 +580,8 @@ const PrivacyPage = () => {
             Clearwater
             <br />
             FL 33755
-          </p>
-          <p>This website privacy policy was last updated on September 27, 2021.</p>
+          </p> */}
+          <p>This website privacy policy was last updated on January 11, 2022.</p>
           <p>
             <strong>Texting&nbsp;Privacy Policy</strong>
           </p>

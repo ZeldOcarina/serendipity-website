@@ -27,36 +27,16 @@ const StyledHomeTeam = styled.section`
   }
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(5, var(--circle-width));
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
     gap: 3rem;
 
-    ${respond(
-      "tab-land",
-      css`
-        grid-template-columns: repeat(3, var(--circle-width));
-      `
-    )}
-    ${respond(
-      "phone-land",
-      css`
-        grid-template-columns: repeat(2, var(--circle-width));
-      `
-    )}
-    ${respond(
-      "phone-port",
-      css`
-        grid-template-columns: repeat(1, var(--circle-width));
-      `
-    )}
-    ${respond(
-      "iphone-5",
-      css`
-        grid-template-columns: repeat(1, var(--small-circle-width));
-      `
-    )}
+    ${respond("tab-land", css``)}
+    ${respond("phone-land", css``)}
+    ${respond("phone-port", css``)}
+    ${respond("iphone-5", css``)}
   }
 `;
 
