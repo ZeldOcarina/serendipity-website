@@ -26,7 +26,7 @@ const StyledFeaturedNews = styled.div`
   }
 
   .news-container {
-    width: 65%;
+    width: 80%;
     font-size: 2.8rem;
 
     ${respond(
