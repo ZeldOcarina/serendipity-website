@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import respond from "../styles/abstracts/mediaqueries";
 
 const StyledHomeTeamMember = styled.article`
   display: flex;
@@ -46,6 +47,15 @@ const StyledHomeTeamMember = styled.article`
   .email,
   .post {
     font-size: 1.6rem;
+  }
+
+  &:not(:last-child) {
+    ${respond(
+      "phone-port",
+      css`
+        margin-bottom: 3rem;
+      `
+    )}
   }
 `;
 

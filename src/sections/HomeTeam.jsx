@@ -35,7 +35,12 @@ const StyledHomeTeam = styled.section`
 
     ${respond("tab-land", css``)}
     ${respond("phone-land", css``)}
-    ${respond("phone-port", css``)}
+    ${respond(
+      "phone-port",
+      css`
+        gap: 0;
+      `
+    )}
     ${respond("iphone-5", css``)}
   }
 `;
