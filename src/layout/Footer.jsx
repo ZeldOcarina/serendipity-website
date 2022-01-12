@@ -43,7 +43,7 @@ const Footer = ({
       <div className="container">
         <img src={logo} alt={logoAlt} className="logo" />
         <div className="copyright">
-          &copy;{new Date().getFullYear()} Serendipity Film Group. All Rights Reserved |{" "}
+          &copy;{new Date().getFullYear()} Serendipity Group Inc. All Rights Reserved |{" "}
           <Link to="/privacy">Privacy Policy</Link>
         </div>
       </div>
