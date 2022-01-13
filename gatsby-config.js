@@ -83,5 +83,27 @@ module.exports = {
         // selfHostedOrigin: "YOUR_SELF_HOSTED_ORIGIN",
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [
+          { userAgent: "Googlebot", allow: "*", disallow: [] },
+          {
+            userAgent: "msnbot|BingBot",
+            allow: "*",
+            disallow: [],
+          },
+          {
+            userAgent: "DuckDuckBot",
+            allow: "*",
+            disallow: [],
+          },
+          {
+            userAgent: "*",
+            disallow: "*",
+          },
+        ],
+      },
+    },
   ],
 };
