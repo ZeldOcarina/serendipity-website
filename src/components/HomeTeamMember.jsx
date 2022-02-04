@@ -66,7 +66,9 @@ const HomeTeamMember = ({ backgroundColor, textColor, email, name, post, circleW
         <span className="name">{name}</span>
         <span className="post">{post}</span>
       </div>
-      <span className="email">{email}</span>
+      <span className="email">
+        <a href={`mailto:${email}`}>{email}</a>
+      </span>
     </StyledHomeTeamMember>
   );
 };

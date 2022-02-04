@@ -139,12 +139,10 @@ const StyledHero = styled.section`
       width: 16rem;
       filter: brightness(0);
 
-      ${respond(
-        "phone-port",
-        css`
-          max-height: 6rem;
-        `
-      )}
+      &--hulu {
+        width: 12rem;
+      }
+
       ${respond(
         "small-phone",
         css`
@@ -180,7 +178,8 @@ const Hero = () => {
       </div>
       <div className="logo-container">
         {logos.map(({ id, alternativeText, localFile: { publicURL } }) => {
-          return <img className="logo" key={id} alt={alternativeText} src={publicURL} />;
+          const isHulu = alternativeText === "Hulu Logo";
+          return <img className={isHulu ? "logo logo--hulu" : "logo"} key={id} alt={alternativeText} src={publicURL} />;
         })}
       </div>
       <GatsbyImage className="bg-image" image={getImage(bgImage.localFile)} alt={bgImage.alternativeText} />
