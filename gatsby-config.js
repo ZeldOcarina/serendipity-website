@@ -18,21 +18,72 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-source-airtable",
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `Config`,
+            mapping: { attachments: `fileNode` },
+            tableId: `tblu8ZSQMxzqjFOWz`
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `FeaturingSquare`,
+            mapping: { bgImage: `fileNode`, abcLogo: `fileNode`, huluLogo: `fileNode` },
+            tableId: `tblDaqa4GPCvqNsUV`
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `Hero`,
+            mapping: { bgImage: `fileNode` },
+            tableId: `tblIz7GWaKifZqrNe`
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `HeroLogos`,
+            mapping: { logo: `fileNode` },
+            tableId: `tblTLaSgONlZ0Q9Yp`
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `Team`,
+            mapping: {},
+            tableId: `tbl1z7KJcvNhIxJrj`
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `HomeVideo`,
+            mapping: {},
+            tableId: `tblEIBkOYH1Vyhy3T`
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `News`,
+            mapping: { featuredImage: `fileNode` },
+            tableId: `tbllwSHYWivX5qMaj`
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("sass"),
       },
     },
     `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: `https://admin.nicoletabs.com`,
-        queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`serendipity-news`],
-        singleTypes: [`serendipity-website`],
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     apiURL: `https://admin.nicoletabs.com`,
+    //     queryLimit: 1000, // Defaults to 100
+    //     collectionTypes: [`serendipity-news`],
+    //     singleTypes: [`serendipity-website`],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

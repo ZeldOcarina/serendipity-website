@@ -26,8 +26,8 @@ const StyledHomeVideo = styled.section`
 
 const HomeVideo = () => {
   const {
-    strapiSerendipityWebsite: {
-      serendipityHomePage: { homeVideoId },
+    homeVideoIdData: {
+      homeVideoIdData: { homeVideoId },
     },
   } = useStaticQuery(query);
   return (
@@ -39,8 +39,8 @@ const HomeVideo = () => {
 
 const query = graphql`
   query HomeVideoQuery {
-    strapiSerendipityWebsite {
-      serendipityHomePage {
+    homeVideoIdData: airtable(table: { eq: "HomeVideo" }) {
+      homeVideoIdData: data {
         homeVideoId
       }
     }

@@ -15,11 +15,13 @@ const StyledPressPage = styled.main`
 
 const PressPage = ({
   data: {
-    allStrapiSerendipityNews: { news },
+    newsData: { newsData },
   },
 }) => {
   // eslint-disable-next-line
   const appData = useContext(AppContext);
+
+  console.log(newsData);
 
   return (
     <>
@@ -34,8 +36,8 @@ const PressPage = ({
           <div className="inner-container">
             <InnerPageHeader>Press</InnerPageHeader>
             <div className="news-container">
-              {news.map((news) => {
-                return <SingleNews {...news} key={news.strapiId} />;
+              {newsData.map((news) => {
+                return <SingleNews {...news.data} key={news.id} />;
               })}
             </div>
           </div>
@@ -47,26 +49,26 @@ const PressPage = ({
 
 export const query = graphql`
   query NewsPage {
-    allStrapiSerendipityNews(sort: { order: DESC, fields: articleDate }) {
-      news: nodes {
-        articleBody
-        articleDate
-        author
-        media
-        createdAt
-        featuredImage {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+    newsData: allAirtable(filter: { table: { eq: "News" } }, sort: { fields: data___articleDate, order: DESC }) {
+      newsData: nodes {
+        data {
+          articleDate
+          title
+          articleBody
+          author
+          media
+          externalUrl
+          externalUrlButtonText
+          featuredImageAltText
+          featuredImage {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+              }
             }
           }
-          alternativeText
         }
-        title
-        strapiId
-        slug
-        externalUrl
-        externalUrlButtonText
+        id
       }
     }
   }

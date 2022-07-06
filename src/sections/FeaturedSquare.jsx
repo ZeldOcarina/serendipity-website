@@ -163,6 +163,7 @@ const StyledFeaturedSquare = styled.div`
 
   .hulu-logo {
     width: 9rem;
+    filter: invert(99%) sepia(25%) saturate(31%) hue-rotate(55deg) brightness(105%) contrast(100%);
   }
 
   .abc-logo {
@@ -195,39 +196,29 @@ const StyledFeaturedSquare = styled.div`
 
 const FeaturedSquare = () => {
   const {
-    strapiSerendipityWebsite: {
-      serendipityHomePage: {
-        featuringSquare: {
-          titleTopLine,
-          titleSecondLine,
-          bgImage,
-          abcLogo,
-          moviePremiereDate,
-          bottomMidText,
-          huluLogo,
-        },
-      },
-    },
+    featuringSquareData: { featuringSquareData },
   } = useStaticQuery(query);
 
   const { isPhonePort } = useContext(AppContext);
+
+  console.log(featuringSquareData);
 
   return (
     <StyledFeaturedSquare>
       {isPhonePort ? (
         <h2>
-          {titleTopLine}
+          {featuringSquareData.titleTopLine}
           <br />
-          {titleSecondLine}
+          {featuringSquareData.titleSecondLine}
         </h2>
       ) : (
-        <h2>{`${titleTopLine} ${titleSecondLine}`}</h2>
+        <h2>{`${featuringSquareData.titleTopLine} ${featuringSquareData.titleSecondLine}`}</h2>
       )}
       <div className="bottom-part">
         <p>An ABC Limited Series</p>
         <div className="title-container">
           <h3 className="title-text">
-            <span className="women">WOMEN </span>
+            <span className="women">WOMEN</span>
             <span>&nbsp;MOVEMENT</span>
           </h3>
           <div className="vertical-title">
@@ -236,48 +227,58 @@ const FeaturedSquare = () => {
           </div>
         </div>
         <div className="bottom-logos">
-          <span>{moviePremiereDate}</span>
-          <GatsbyImage image={getImage(abcLogo.localFile)} alt={abcLogo.alternativeText} className="abc-logo" />
-          <span>{bottomMidText}</span>
-          <img className="hulu-logo" src={huluLogo.localFile.url} alt="Hulu Logo" />
+          <span>{featuringSquareData.moviePremiereDate}</span>
+          <GatsbyImage
+            image={getImage(featuringSquareData.abcLogo.localFiles[0])}
+            alt={featuringSquareData.abcLogoAltText}
+            className="abc-logo"
+          />
+          <span>{featuringSquareData.bottomMidText}</span>
+          <img
+            className="hulu-logo"
+            src={featuringSquareData.huluLogo.localFiles[0].url}
+            alt={featuringSquareData.huluLogoAltText}
+          />
         </div>
       </div>
-      <GatsbyImage className="img" image={getImage(bgImage.localFile)} alt={bgImage.alternativeText} />
+      <GatsbyImage
+        className="img"
+        image={getImage(featuringSquareData.bgImage.localFiles[0])}
+        alt={featuringSquareData.bgImageAlt}
+      />
     </StyledFeaturedSquare>
   );
 };
 
 const query = graphql`
   query FeaturedSquare {
-    strapiSerendipityWebsite {
-      serendipityHomePage {
-        featuringSquare {
-          link
-          titleTopLine
-          titleSecondLine
-          bgImage {
-            alternativeText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
-              }
+    featuringSquareData: airtable(table: { eq: "FeaturingSquare" }) {
+      featuringSquareData: data {
+        titleTopLine
+        titleSecondLine
+        abcLogoAltText
+        huluLogoAltText
+        bgImageAlt
+        bgImage {
+          localFiles {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
-          abcLogo {
-            alternativeText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
-              }
+        }
+        moviePremiereDate
+        bottomMidText
+        abcLogo {
+          localFiles {
+            url
+            childImageSharp {
+              gatsbyImageData(placeholder: NONE)
             }
           }
-          moviePremiereDate
-          bottomMidText
-          huluLogo {
-            alternativeText
-            localFile {
-              url
-            }
+        }
+        huluLogo {
+          localFiles {
+            url
           }
         }
       }

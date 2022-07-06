@@ -47,9 +47,7 @@ const StyledHomeTeam = styled.section`
 
 function HomeTeam() {
   const {
-    strapiSerendipityWebsite: {
-      serendipityHomePage: { homeTeam },
-    },
+    teamData: { teamData },
   } = useStaticQuery(query);
 
   const { isiPhone5 } = useContext(AppContext);
@@ -58,8 +56,12 @@ function HomeTeam() {
     <StyledHomeTeam>
       <SectionTitle>MEET THE EXECUTIVES</SectionTitle>
       <div className="container">
-        {homeTeam.map((props) => (
-          <HomeTeamMember key={props.id} {...props} circleWidth={isiPhone5 ? CIRCLE_WIDTH - 1 : CIRCLE_WIDTH} />
+        {teamData.map((teamMember) => (
+          <HomeTeamMember
+            key={teamMember.id}
+            {...teamMember.data}
+            circleWidth={isiPhone5 ? CIRCLE_WIDTH - 1 : CIRCLE_WIDTH}
+          />
         ))}
       </div>
     </StyledHomeTeam>
@@ -68,16 +70,16 @@ function HomeTeam() {
 
 export const query = graphql`
   query HomeTeam {
-    strapiSerendipityWebsite {
-      serendipityHomePage {
-        homeTeam {
-          backgroundColor
-          email
-          id
+    teamData: allAirtable(filter: { table: { eq: "Team" } }) {
+      teamData: nodes {
+        data {
           name
           post
+          email
+          backgroundColor
           textColor
         }
+        id
       }
     }
   }

@@ -13,7 +13,7 @@ const SingleNewsPage = ({ data: { strapiSerendipityNews } }) => {
   //console.log(strapiSerendipityNews);
   return (
     <>
-      <Seo
+      {/* <Seo
         title={`Serendipity Group | ${strapiSerendipityNews.title}`}
         description={strapiSerendipityNews.homeExcerpt}
         language="en"
@@ -23,34 +23,34 @@ const SingleNewsPage = ({ data: { strapiSerendipityNews } }) => {
         <StyledSingleNewsPage className="inner-container">
           <SingleNews {...strapiSerendipityNews} />
         </StyledSingleNewsPage>
-      </Layout>
+      </Layout> */}
     </>
   );
 };
 
-export const query = graphql`
-  query GetSingleNews($slug: String) {
-    strapiSerendipityNews(slug: { eq: $slug }) {
-      slug
-      articleBody
-      articleDate
-      author
-      media
-      homeExcerpt
-      featuredImage {
-        localFile {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
-          }
-        }
-        alternativeText
-      }
-      title
-      strapiId
-      externalUrl
-      externalUrlButtonText
-    }
-  }
-`;
+// export const query = graphql`
+//   query GetSingleNews($slug: String) {
+//     strapiSerendipityNews(slug: { eq: $slug }) {
+//       slug
+//       articleBody
+//       articleDate
+//       author
+//       media
+//       homeExcerpt
+//       featuredImage {
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+//           }
+//         }
+//         alternativeText
+//       }
+//       title
+//       strapiId
+//       externalUrl
+//       externalUrlButtonText
+//     }
+//   }
+// `;
 
 export default SingleNewsPage;

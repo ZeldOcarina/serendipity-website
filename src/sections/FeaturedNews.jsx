@@ -105,22 +105,22 @@ const StyledFeaturedNews = styled.div`
 
 const FeaturedNews = () => {
   const {
-    allStrapiSerendipityNews: { serendipityNews },
+    homeNewsData: { homeNewsData },
   } = useStaticQuery(query);
+
   return (
     <StyledFeaturedNews>
       <SectionTitle>PRESS</SectionTitle>
       <div className="bottom-container">
         <div className="news-container">
-          {serendipityNews.map(({ id, homeExcerpt, articleDate }, i) => {
-            if (i > 2) return "";
+          {homeNewsData.map(({ id, data: { title, articleDate } }, i) => {
             return (
               <React.Fragment key={id}>
                 <article className="single-new">
                   <span className="date">{articleDate}</span>
-                  <p className="excerpt">{homeExcerpt}</p>
+                  <p className="excerpt">{title}</p>
                 </article>
-                {!(serendipityNews.length === i + 1) && <hr />}
+                {!(homeNewsData.length === i + 1) && <hr />}
               </React.Fragment>
             );
           })}
@@ -135,11 +135,17 @@ const FeaturedNews = () => {
 
 const query = graphql`
   query HomeNews {
-    allStrapiSerendipityNews(limit: 3, sort: { fields: published_at, order: DESC }) {
-      serendipityNews: nodes {
+    homeNewsData: allAirtable(
+      filter: { table: { eq: "News" } }
+      sort: { fields: data___articleDate, order: DESC }
+      limit: 3
+    ) {
+      homeNewsData: nodes {
+        data {
+          articleDate(formatString: "MMMM DD")
+          title
+        }
         id
-        homeExcerpt
-        articleDate(formatString: "MMMM DD")
       }
     }
   }

@@ -74,9 +74,9 @@ const SingleNews = ({
   externalUrlButtonText,
 }) => {
   const alternativeText = featuredImage?.alternativeText || "Press Image";
-  const excerptParagraph = articleBody.split("\n\n")[0].split(" ").slice(0, 55);
-  const paragraphs = excerpt ? [excerptParagraph.join(" ") + " [...]"] : articleBody.split("\n\n");
-  const image = getImage(featuredImage?.localFile?.childImageSharp) || undefined;
+  const excerptParagraph = articleBody?.split("\n\n")[0]?.split(" ")?.slice(0, 55) || articleBody;
+  const paragraphs = excerpt ? [excerptParagraph?.join(" ") + " [...]"] : articleBody?.split("\n\n");
+  const image = getImage(featuredImage?.localFiles[0]) || undefined;
   const displayedDate = parseStringDate(articleDate).toLocaleDateString("en-EN", {
     day: "2-digit",
     month: "long",
@@ -90,7 +90,7 @@ const SingleNews = ({
         Written by {author} for {media}. {displayedDate}
       </span>
       {image && <GatsbyImage className="image" image={image} alt={alternativeText} />}
-      {paragraphs.map((p) => {
+      {paragraphs?.map((p) => {
         return <p key={uuidv4()}>{p}</p>;
       })}
       {excerpt && (

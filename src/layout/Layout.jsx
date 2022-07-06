@@ -5,14 +5,10 @@ import Navbar from "./Navbar";
 import MobileNavbar from "./MobileNavbar";
 import Footer from "./Footer";
 
-import logo from "../images/serendipity-logo.svg";
-
 const Layout = ({ children, innerPage, homePage }) => {
   const {
     site: { siteMetadata },
-    strapiSerendipityWebsite: {
-      serendipityLogo: { alternativeText },
-    },
+    logoData: { logoData },
   } = useStaticQuery(query);
 
   return (
@@ -21,11 +17,15 @@ const Layout = ({ children, innerPage, homePage }) => {
         siteMetadata={siteMetadata}
         innerPage={innerPage || false}
         homePage={homePage || false}
-        logo={logo}
-        logoAlt={alternativeText}
+        logo={logoData.attachments.localFiles[0].url}
+        logoAlt={logoData.alternativeText}
       />
       {children}
-      <Footer siteMetadata={siteMetadata} logo={logo} logoAlt={alternativeText} />
+      <Footer
+        siteMetadata={siteMetadata}
+        logo={logoData.attachments.localFiles[0].url}
+        logoAlt={logoData.alternativeText}
+      />
       <MobileNavbar siteMetadata={siteMetadata} />
     </>
   );
@@ -50,8 +50,14 @@ const query = graphql`
         }
       }
     }
-    strapiSerendipityWebsite {
-      serendipityLogo {
+    logoData: airtable(table: { eq: "Config" }) {
+      logoData: data {
+        Name
+        attachments {
+          localFiles {
+            url
+          }
+        }
         alternativeText
       }
     }

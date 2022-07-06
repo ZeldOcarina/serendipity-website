@@ -141,6 +141,11 @@ const StyledHero = styled.section`
 
       &--hulu {
         width: 12rem;
+        transform: translateY(-5px);
+      }
+
+      &--disney {
+        transform: translateX(16px);
       }
 
       ${respond(
@@ -164,52 +169,102 @@ const StyledHero = styled.section`
 
 const Hero = () => {
   const {
-    strapiSerendipityWebsite: {
-      serendipityHomePage: {
-        serendipityHero: { title, description, logos, bgImage },
-      },
-    },
+    heroData: { heroData },
+    logosData: { logosData },
   } = useStaticQuery(query);
+
+  function setLogoClass(alternativeText) {
+    switch (alternativeText) {
+      case "Hulu Logo":
+        return "logo logo--hulu";
+      case "Disney Logo":
+        return "logo logo--disney";
+      default:
+        return "logo";
+    }
+  }
+
   return (
     <StyledHero>
       <div className="text-container">
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <h1>{heroData.title}</h1>
+        <p>{heroData.description}</p>
       </div>
       <div className="logo-container">
-        {logos.map(({ id, alternativeText, localFile: { publicURL } }) => {
-          const isHulu = alternativeText === "Hulu Logo";
-          return <img className={isHulu ? "logo logo--hulu" : "logo"} key={id} alt={alternativeText} src={publicURL} />;
-        })}
+        {logosData.map(
+          ({
+            id,
+            data: {
+              logo: {
+                localFiles: [{ url }],
+              },
+              alternativeText,
+            },
+          }) => {
+            return <img className={setLogoClass(alternativeText)} key={id} alt={alternativeText} src={url} />;
+          }
+        )}
       </div>
-      <GatsbyImage className="bg-image" image={getImage(bgImage.localFile)} alt={bgImage.alternativeText} />
+      <GatsbyImage className="bg-image" image={getImage(heroData.bgImage.localFiles[0])} alt={heroData.bgImageAlt} />
     </StyledHero>
   );
 };
 
+// const query = graphql`
+//   query HomeHero {
+//     strapiSerendipityWebsite {
+//       serendipityHomePage {
+//         serendipityHero {
+//           description
+//           title
+//           logos {
+//             alternativeText
+//             id
+//             localFile {
+//               publicURL: url
+//             }
+//           }
+//           bgImage {
+//             alternativeText
+//             localFile {
+//               childImageSharp {
+//                 gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
 const query = graphql`
-  query HomeHero {
-    strapiSerendipityWebsite {
-      serendipityHomePage {
-        serendipityHero {
-          description
-          title
-          logos {
-            alternativeText
-            id
-            localFile {
-              publicURL: url
-            }
-          }
-          bgImage {
-            alternativeText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-              }
+  {
+    heroData: airtable(table: { eq: "Hero" }) {
+      heroData: data {
+        title
+        description
+        bgImage {
+          localFiles {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
             }
           }
         }
+        bgImageAlt
+      }
+    }
+    logosData: allAirtable(filter: { table: { eq: "HeroLogos" } }) {
+      logosData: nodes {
+        data {
+          logo {
+            localFiles {
+              url
+            }
+          }
+          alternativeText
+        }
+        id
       }
     }
   }
