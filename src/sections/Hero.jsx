@@ -145,7 +145,7 @@ const StyledHero = styled.section`
       }
 
       &--disney {
-        transform: translateX(16px);
+        /*transform: translateX(16px);*/
       }
 
       ${respond(
