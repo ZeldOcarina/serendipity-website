@@ -1,3 +1,4 @@
+const path = require("path");
 const siteMetadata = require("./src/content/siteMetadata");
 
 require("dotenv").config({
@@ -10,6 +11,18 @@ module.exports = {
   },
   siteMetadata: siteMetadata,
   plugins: [
+    {
+      // We need filesystem source plugin to add publicURL function to File nodes
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `placeholder`,
+        // path is required param, so let's just point it to single file to not create
+        // much unnecessary work for it
+        path: path.resolve(`${__dirname}/gatsby-config.js`),
+        ignore: [`**/\.*`], // ignore files starting with a dot
+        fastHash: true
+      },
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",

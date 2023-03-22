@@ -135,11 +135,7 @@ const FeaturedNews = () => {
 
 const query = graphql`
   query HomeNews {
-    homeNewsData: allAirtable(
-      filter: { table: { eq: "News" } }
-      sort: { fields: data___articleDate, order: DESC }
-      limit: 3
-    ) {
+    homeNewsData: allAirtable(filter: { table: { eq: "News" } }, sort: { data: { articleDate: DESC } }, limit: 3) {
       homeNewsData: nodes {
         data {
           articleDate(formatString: "MMMM DD")

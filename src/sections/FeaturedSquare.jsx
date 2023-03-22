@@ -201,8 +201,6 @@ const FeaturedSquare = () => {
 
   const { isPhonePort } = useContext(AppContext);
 
-  console.log(featuringSquareData);
-
   return (
     <StyledFeaturedSquare>
       {isPhonePort ? (
@@ -236,7 +234,7 @@ const FeaturedSquare = () => {
           <span>{featuringSquareData.bottomMidText}</span>
           <img
             className="hulu-logo"
-            src={featuringSquareData.huluLogo.localFiles[0].url}
+            src={featuringSquareData.huluLogo.localFiles[0].publicURL}
             alt={featuringSquareData.huluLogoAltText}
           />
         </div>
@@ -270,7 +268,7 @@ const query = graphql`
         bottomMidText
         abcLogo {
           localFiles {
-            url
+            publicURL
             childImageSharp {
               gatsbyImageData(placeholder: NONE)
             }
@@ -278,7 +276,7 @@ const query = graphql`
         }
         huluLogo {
           localFiles {
-            url
+            publicURL
           }
         }
       }

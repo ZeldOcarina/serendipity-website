@@ -196,12 +196,12 @@ const Hero = () => {
             id,
             data: {
               logo: {
-                localFiles: [{ url }],
+                localFiles: [{ publicURL }],
               },
               alternativeText,
             },
           }) => {
-            return <img className={setLogoClass(alternativeText)} key={id} alt={alternativeText} src={url} />;
+            return <img className={setLogoClass(alternativeText)} key={id} alt={alternativeText} src={publicURL} />;
           }
         )}
       </div>
@@ -209,34 +209,6 @@ const Hero = () => {
     </StyledHero>
   );
 };
-
-// const query = graphql`
-//   query HomeHero {
-//     strapiSerendipityWebsite {
-//       serendipityHomePage {
-//         serendipityHero {
-//           description
-//           title
-//           logos {
-//             alternativeText
-//             id
-//             localFile {
-//               publicURL: url
-//             }
-//           }
-//           bgImage {
-//             alternativeText
-//             localFile {
-//               childImageSharp {
-//                 gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
 
 const query = graphql`
   {
@@ -259,7 +231,7 @@ const query = graphql`
         data {
           logo {
             localFiles {
-              url
+              publicURL
             }
           }
           alternativeText

@@ -21,8 +21,6 @@ const PressPage = ({
   // eslint-disable-next-line
   const appData = useContext(AppContext);
 
-  console.log(newsData);
-
   return (
     <>
       <Seo
@@ -49,7 +47,7 @@ const PressPage = ({
 
 export const query = graphql`
   query NewsPage {
-    newsData: allAirtable(filter: { table: { eq: "News" } }, sort: { fields: data___articleDate, order: DESC }) {
+    newsData: allAirtable(filter: { table: { eq: "News" } }, sort: { data: { articleDate: DESC } }) {
       newsData: nodes {
         data {
           articleDate

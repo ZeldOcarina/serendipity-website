@@ -17,7 +17,7 @@ const Layout = ({ children, innerPage, homePage }) => {
         siteMetadata={siteMetadata}
         innerPage={innerPage || false}
         homePage={homePage || false}
-        logo={logoData.attachments.localFiles[0].url}
+        logo={logoData.attachments.localFiles[0].publicURL}
         logoAlt={logoData.alternativeText}
       />
       {children}
@@ -52,13 +52,12 @@ const query = graphql`
     }
     logoData: airtable(table: { eq: "Config" }) {
       logoData: data {
-        Name
+        alternativeText
         attachments {
           localFiles {
-            url
+            publicURL
           }
         }
-        alternativeText
       }
     }
   }
