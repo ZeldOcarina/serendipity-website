@@ -4,6 +4,7 @@ import AppContext from "../context/AppContext";
 
 import Seo from "../components/Seo";
 import Hero from "../sections/Hero";
+import HomeBigText from "../sections/HomeBigText";
 import HomeVideo from "../sections/HomeVideo";
 import HomeNews from "../sections/HomeNews";
 import HomeTeam from "../sections/HomeTeam";
@@ -24,6 +25,7 @@ const IndexPage = () => {
       />
       <Layout homePage>
         <Hero />
+        <HomeBigText />
         <HomeVideo />
         <HomeNews />
         <HomeTeam />

@@ -55,10 +55,20 @@ const Button = (props) => {
     if (!e.target.children[0]) return;
     e.target.children[0].click();
   }
+
+  function setOnClick() {
+    if (props.onClick) {
+      return props.onClick;
+    } else if (props.disabled) {
+      return null;
+    } else {
+      return handleClick;
+    }
+  }
   return (
     <StyledButton
       type="button"
-      onClick={props.disabled ? null : handleClick}
+      onClick={setOnClick()}
       disabled={props.disabled}
       alternative={props.alternative}
       backgroundColor={props.backgroundColor}

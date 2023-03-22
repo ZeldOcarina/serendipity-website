@@ -40,19 +40,25 @@ module.exports = {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: `Config`,
             mapping: { attachments: `fileNode` },
-            tableId: `tblu8ZSQMxzqjFOWz`
+
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: `FeaturingSquare`,
             mapping: { bgImage: `fileNode`, abcLogo: `fileNode`, huluLogo: `fileNode` },
-            tableId: `tblDaqa4GPCvqNsUV`
+
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: `Hero`,
             mapping: { bgImage: `fileNode` },
-            tableId: `tblIz7GWaKifZqrNe`
+
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `HomeBigText`,
+            mapping: { crown: `fileNode`, bgImage: `fileNode` },
+
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
@@ -111,6 +117,7 @@ module.exports = {
               variants: ["300", "300i"],
             },
             { family: "Asul", variants: ["400", "700"] },
+            { family: "Six Caps", variants: ["400"] },
           ],
         },
       },
