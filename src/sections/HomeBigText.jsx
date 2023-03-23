@@ -226,7 +226,7 @@ const StyledHomeBigText = styled.section`
       font-weight: 700;
       font-style: normal;
       letter-spacing: 2px;
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 2rem;
     }
 
@@ -241,8 +241,8 @@ const StyledHomeBigText = styled.section`
     h5,
     h6 {
       font-family: "Montserrat", sans-serif;
-      font-style: italic;
       margin-bottom: 2rem;
+      font-size: var(--body-font-size);
     }
 
     p {
@@ -305,10 +305,6 @@ const HomeBigText = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [isTitleInView]);
-
-  React.useEffect(() => {
-    console.log(isTitleInView);
   }, [isTitleInView]);
 
   function handleClick() {

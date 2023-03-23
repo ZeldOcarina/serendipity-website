@@ -23,7 +23,7 @@ const Layout = ({ children, innerPage, homePage }) => {
       {children}
       <Footer
         siteMetadata={siteMetadata}
-        logo={logoData.attachments.localFiles[0].url}
+        logo={logoData.attachments.localFiles[0].publicURL}
         logoAlt={logoData.alternativeText}
       />
       <MobileNavbar siteMetadata={siteMetadata} />

@@ -70,7 +70,7 @@ function HomeTeam() {
 
 export const query = graphql`
   query HomeTeam {
-    teamData: allAirtable(filter: { table: { eq: "Team" } }) {
+    teamData: allAirtable(filter: { table: { eq: "Team" } }, sort: { data: { rowNumber: ASC } }) {
       teamData: nodes {
         data {
           name
