@@ -7,20 +7,6 @@ import respond from "../styles/abstracts/mediaqueries";
 
 import Button from "../components/Button";
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.5) translateY(1000px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
- `;
-
-console.log(fadeIn);
-
 const StyledHomeBigText = styled.section`
   position: relative;
   min-height: 100vh;
@@ -30,7 +16,6 @@ const StyledHomeBigText = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: opacity 1s ease-in-out;
   }
 
   .big-title {
@@ -40,8 +25,6 @@ const StyledHomeBigText = styled.section`
     text-align: center;
     line-height: 1;
     letter-spacing: 30px;
-    opacity: 0;
-    transform: scale(0.5);
 
     ${respond(
       1570,
@@ -90,10 +73,6 @@ const StyledHomeBigText = styled.section`
       font-size: 70rem;
       letter-spacing: 40px;
     }
-  }
-
-  .big-title.fade-in {
-    animation: ${fadeIn} 1s ease-in-out 0s 1 normal forwards;
   }
 
   .crown {
@@ -250,6 +229,11 @@ const StyledHomeBigText = styled.section`
       font-size: 3.5rem;
       margin-bottom: 2rem;
     }
+
+    .copy {
+      font-family: "Montserrat", sans-serif;
+    }
+
     h1,
     h2,
     h3,
@@ -271,12 +255,17 @@ const StyledHomeBigText = styled.section`
 
     .button {
       margin-top: 3rem;
+      color: var(--white);
     }
   }
 `;
 
+const words = ["Woman", "Life", "Freedom"];
+
 const HomeBigText = () => {
+  const [isTitleInView, setIsTitleInView] = React.useState(false);
   const [isCopyExpanded, setIsCopyExpanded] = React.useState(false);
+  const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
   const titleRef = React.useRef(null);
 
   const {
@@ -291,9 +280,7 @@ const HomeBigText = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          title.classList.add("fade-in");
-        }
+        setIsTitleInView(entry.isIntersecting);
       },
       { threshold: 1 }
     );
@@ -304,6 +291,25 @@ const HomeBigText = () => {
       observer.unobserve(title);
     };
   }, []);
+
+  React.useEffect(() => {
+    if (!isTitleInView) return;
+    const interval = setInterval(() => {
+      setCurrentWordIndex((currentWordIndex) => {
+        return currentWordIndex === words.length - 1 ? 0 : currentWordIndex + 1;
+      });
+    }, 1000);
+
+    // if (!isTitleInView) clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isTitleInView]);
+
+  React.useEffect(() => {
+    console.log(isTitleInView);
+  }, [isTitleInView]);
 
   function handleClick() {
     setIsCopyExpanded(!isCopyExpanded);
@@ -322,17 +328,18 @@ const HomeBigText = () => {
       <div className="container">
         <GatsbyImage className="crown" image={getImage(crown.localFiles[0])} alt={crownAltText} />
         <h2 className="big-title" ref={titleRef}>
-          {heading}
+          {words[currentWordIndex].toUpperCase()}
         </h2>
         <div className="text-container">
           <h3 className="text-heading">{textHeading}</h3>
-          <div>{isCopyExpanded ? fullCopy : shortenedCopy}</div>
+          <div className="copy">{isCopyExpanded ? fullCopy : shortenedCopy}</div>
           <Button
             alternative
-            backgroundColor="var(--color-primary)"
-            hoverBackgroundColor="var(--color-primary)"
+            backgroundColor="#EDC4C9"
+            hoverBackgroundColor="#EDC4C9"
             uppercase
             className="button"
+            color="#ffffff"
             onClick={handleClick}
           >
             {isCopyExpanded ? "Read Less" : "Read More"}
