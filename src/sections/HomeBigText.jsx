@@ -77,12 +77,13 @@ const StyledHomeBigText = styled.section`
 
   .crown {
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 30rem;
 
     ${respond(
       670,
       css`
         width: 15rem;
+        max-width: 100%;
       `
     )}
     ${respond(
@@ -323,7 +324,7 @@ const HomeBigText = () => {
     <StyledHomeBigText>
       <div className="container">
         {/* <GatsbyImage className="crown" image={getImage(crown.localFiles[0])} alt={crownAltText} /> */}
-        <img className="crown" image={crown.localFiles[0].publicURL} alt={crownAltText} />
+        <img className="crown" src={crown.localFiles[0].publicURL} alt={crownAltText} />
         <h2 className="big-title" ref={titleRef}>
           {words[currentWordIndex].toUpperCase()}
         </h2>
@@ -343,7 +344,7 @@ const HomeBigText = () => {
           </Button>
         </div>
       </div>
-      <img className="bg-image" image={bgImage.localFiles[0]} alt={bgImageAltText} lazy={true} />
+      <img className="bg-image" src={bgImage.localFiles[0].publicURL} alt={bgImageAltText} lazy="true" />
     </StyledHomeBigText>
   );
 };
