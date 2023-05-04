@@ -77,7 +77,7 @@ const StyledHomeBigText = styled.section`
 
   .crown {
     margin: 0 auto;
-    max-width: 30rem;
+    max-width: 20rem;
 
     ${respond(
       670,
