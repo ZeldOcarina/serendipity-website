@@ -322,7 +322,8 @@ const HomeBigText = () => {
   return (
     <StyledHomeBigText>
       <div className="container">
-        <GatsbyImage className="crown" image={getImage(crown.localFiles[0])} alt={crownAltText} />
+        {/* <GatsbyImage className="crown" image={getImage(crown.localFiles[0])} alt={crownAltText} /> */}
+        <img className="crown" image={crown.localFiles[0].publicURL} alt={crownAltText} />
         <h2 className="big-title" ref={titleRef}>
           {words[currentWordIndex].toUpperCase()}
         </h2>
@@ -342,7 +343,7 @@ const HomeBigText = () => {
           </Button>
         </div>
       </div>
-      <GatsbyImage className="bg-image" image={getImage(bgImage.localFiles[0])} alt={bgImageAltText} />
+      <img className="bg-image" image={bgImage.localFiles[0]} alt={bgImageAltText} lazy={true} />
     </StyledHomeBigText>
   );
 };
@@ -358,16 +359,12 @@ const query = graphql`
         copy
         bgImage {
           localFiles {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
-            }
+            publicURL
           }
         }
         crown {
           localFiles {
-            childImageSharp {
-              gatsbyImageData
-            }
+            publicURL
           }
         }
       }
