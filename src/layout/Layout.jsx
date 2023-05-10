@@ -50,7 +50,7 @@ const query = graphql`
         }
       }
     }
-    logoData: airtable(table: { eq: "Config" }) {
+    logoData: airtable(table: { eq: "Config" }, data: { Category: { eq: "Logo" } }) {
       logoData: data {
         alternativeText
         attachments {
