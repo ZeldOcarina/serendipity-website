@@ -247,6 +247,8 @@ const StyledHomeBigText = styled.section`
 
     p {
       margin-bottom: 1rem;
+      /* color: black; */
+      font-weight: 500;
     }
 
     strong {
