@@ -23,12 +23,6 @@ const PressPage = ({
 
   return (
     <>
-      <Seo
-        title={"Serendipity Group | Press"}
-        description={"Serendipity group press releases"}
-        language="en"
-        homePage={false}
-      />
       <Layout>
         <StyledPressPage>
           <div className="inner-container">
@@ -44,6 +38,15 @@ const PressPage = ({
     </>
   );
 };
+
+export const Head = () => (
+  <Seo
+    title={"Serendipity Group | Press"}
+    description={"Serendipity group press releases"}
+    language="en"
+    homePage={false}
+  />
+);
 
 export const query = graphql`
   query NewsPage {

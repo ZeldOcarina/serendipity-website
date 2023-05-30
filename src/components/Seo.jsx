@@ -1,8 +1,7 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
 
-const Seo = ({ title, description, language }) => {
+const Seo = ({ title, description }) => {
   const {
     site: {
       siteMetadata: { siteUrl, title: metaTitle, description: metaDescription },
@@ -10,7 +9,7 @@ const Seo = ({ title, description, language }) => {
   } = useStaticQuery(query);
 
   return (
-    <Helmet htmlAttributes={{ lang: language || "en" }}>
+    <>
       <title>{title || metaTitle}</title>
       <link rel="stylesheet" href="https://use.typekit.net/mmv4rvk.css" />
       <meta name="description" content={description || metaDescription} />
@@ -32,11 +31,7 @@ const Seo = ({ title, description, language }) => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta name="theme-color" content="#ffffff" />
-
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" /> */}
-      {/* <link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap" rel="stylesheet" /> */}
-    </Helmet>
+    </>
   );
 };
 

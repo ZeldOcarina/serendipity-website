@@ -16,13 +16,6 @@ const IndexPage = () => {
 
   return (
     <main>
-      <Seo
-        title={"Serendipity Group"}
-        description={
-          "At Serendipity we produce high content movies and TV series partnering with major brands like Disney and ABC. We air on major broadcast media."
-        }
-        language="en"
-      />
       <Layout homePage>
         <Hero />
         <HomeBigText />
@@ -33,5 +26,15 @@ const IndexPage = () => {
     </main>
   );
 };
+
+export const Head = () => (
+  <Seo
+    title={"Serendipity Group"}
+    description={
+      "At Serendipity we produce high content movies and TV series partnering with major brands like Disney and ABC. We air on major broadcast media."
+    }
+    language="en"
+  />
+);
 
 export default IndexPage;

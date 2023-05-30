@@ -1,27 +1,13 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import respond from "../styles/abstracts/mediaqueries";
-
-import AppContext from "../context/AppContext";
 
 const StyledSquare = styled.div`
   position: relative;
   width: 100%;
   padding: 5%;
   box-sizing: border-box;
-
-  ${respond(
-    "phone-port",
-    css`
-      height: 70vh !important;
-    `
-  )}
-  ${respond(
-    "iphone-8-plus",
-    css`
-      height: 80vh !important;
-    `
-  )}
+  aspect-ratio: 1 / 1;
 
   ${(props) => {
     return (
@@ -30,6 +16,7 @@ const StyledSquare = styled.div`
         "phone-port",
         css`
           height: max-content !important;
+          aspect-ratio: unset;
           padding: 5rem 2rem;
         `
       )
@@ -47,17 +34,12 @@ const StyledSquare = styled.div`
 `;
 
 const Square = (props) => {
-  const squareRef = useRef(null);
-
-  const { isPhonePort } = useContext(AppContext);
-
-  useEffect(() => {
-    const currentWidth = squareRef.current.offsetWidth;
-    squareRef.current.style.height = `${currentWidth}px`;
-  }, [isPhonePort]);
-
   return (
-    <StyledSquare ref={squareRef} backgroundColor={props.backgroundColor} smallMobileSquare={props.smallMobileSquare}>
+    <StyledSquare
+      className={props.className || ""}
+      backgroundColor={props.backgroundColor}
+      smallMobileSquare={props.smallMobileSquare}
+    >
       {props.children}
     </StyledSquare>
   );

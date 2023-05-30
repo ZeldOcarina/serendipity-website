@@ -16,3 +16,7 @@ exports.wrapPageElement = ({ element }) => {
     </>
   );
 };
+
+exports.onRenderBody = ({ setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: "en" })
+}

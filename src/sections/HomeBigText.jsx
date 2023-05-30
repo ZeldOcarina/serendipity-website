@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import MarkdownParser from "../helpers/MarkdownParser";
 import respond from "../styles/abstracts/mediaqueries";
 
@@ -271,7 +270,7 @@ const HomeBigText = () => {
 
   const {
     homeBigTextData: {
-      homeBigTextData: { heading, crownAltText, bgImageAltText, textHeading, copy, bgImage, crown },
+      homeBigTextData: { crownAltText, bgImageAltText, textHeading, copy, bgImage, crown },
     },
   } = useStaticQuery(query);
 
