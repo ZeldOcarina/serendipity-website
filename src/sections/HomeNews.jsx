@@ -1,10 +1,9 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import Square from "../components/Square";
 import FeaturedSquare from "../sections/FeaturedSquare";
 import FeaturedNews from "../sections/FeaturedNews";
-import respond from "../styles/abstracts/mediaqueries";
 
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -14,12 +13,9 @@ const StyledHomeNews = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  ${respond(
-    "tab-port",
-    css`
-      display: block;
-    `
-  )}
+  @media only screen and (max-width: 1230px) {
+    display: block;
+  }
 
   .square-top-left {
     height: 100%;
@@ -44,6 +40,13 @@ const StyledHomeNews = styled.div`
         text-align: center;
         font-family: inherit;
         font-size: 4.7rem;
+
+        @media only screen and (max-width: 750px) {
+          font-size: 3.5rem;
+        }
+        @media only screen and (max-width: 350px) {
+          font-size: 3rem;
+        }
       }
     }
   }
@@ -59,9 +62,27 @@ const StyledHomeNews = styled.div`
       position: relative;
       padding-top: 5%;
     }
+
+    .bottom-content {
+      position: absolute;
+      z-index: 100;
+      bottom: 5%;
+      max-width: 90%;
+      left: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .bottom-image {
+        max-width: 50%;
+      }
+      .bottom-image--award {
+        max-width: 75%;
+      }
+    }
+
     .bg-image {
       position: absolute;
-      background: red;
       width: 100%;
       height: 100%;
       top: 0;
@@ -80,8 +101,13 @@ function HomeNews() {
           </div>
         </div>
       </Square>
-      <Square className="award-winner" backgroundColor="var(--color-primary)" smallMobileSquare>
+      <Square className="award-winner" backgroundColor="var(--color-primary)">
         <h2 className="square-title">FEATURING</h2>
+        <div className="bottom-content">
+          <StaticImage className="bottom-image" src="../images/gracies.png" alt="The Gracies logo" />"
+          <StaticImage className="bottom-image bottom-image--award" src="../images/award.png" alt="Award winner logo" />
+          "
+        </div>
         <StaticImage className="bg-image" quality={100} src="../images/award-winner.png" alt="Award Winner" />
       </Square>
       <Square>

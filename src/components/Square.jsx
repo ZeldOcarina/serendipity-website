@@ -13,7 +13,7 @@ const StyledSquare = styled.div`
     return (
       props.smallMobileSquare &&
       respond(
-        "phone-port",
+        "tab-land",
         css`
           height: max-content !important;
           aspect-ratio: unset;
