@@ -25,7 +25,6 @@ const StyledHomeNews = styled.div`
 
     .square-title {
       text-align: center;
-
       font-family: var(--body-font);
     }
 
@@ -40,6 +39,7 @@ const StyledHomeNews = styled.div`
         text-align: center;
         font-family: inherit;
         font-size: 4.7rem;
+        font-weight: 200;
 
         @media only screen and (max-width: 750px) {
           font-size: 3.5rem;
