@@ -2,17 +2,17 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
-  background-color: ${({ backgroundColor }) => (backgroundColor ? backgroundColor : "transparent")};
-  color: ${({ color }) => (color ? color : "var(--color-tertiary)")};
-  text-transform: ${({ uppercase }) => (uppercase ? "uppercase" : "default")};
-  font-size: ${({ fontSize }) => (fontSize ? fontSize + "px" : "1.6rem")};
+  background-color: ${({ $backgroundColor }) => ($backgroundColor ? $backgroundColor : "transparent")};
+  color: ${({ $color }) => ($color ? $color : "var(--color-tertiary)")};
+  text-transform: ${({ $uppercase }) => ($uppercase ? "uppercase" : "default")};
+  font-size: ${({ $fontSize }) => ($fontSize ? $fontSize + "px" : "1.6rem")};
   border: 1px solid var(--white);
   border-radius: 5px;
   padding: 2rem 5rem;
   transition: all 0.2s ease-in-out;
 
-  ${({ alternative }) =>
-    alternative &&
+  ${({ $alternative }) =>
+    $alternative &&
     css`
       margin: 0 auto;
       display: block;
@@ -26,7 +26,7 @@ const StyledButton = styled.button`
       }
     `}
   ${(props) => {
-    return props.disabled
+    return props.$disabled
       ? css`
           cursor: default;
         `
@@ -43,9 +43,10 @@ const StyledButton = styled.button`
 
   &:hover {
     color: var(--body-color) !important;
-    border: ${({ hoverBorderColor }) =>
-      hoverBorderColor ? "1px solid " + hoverBorderColor : "1px solid var(--body-color)"};
-    background-color: ${({ hoverBackgroundColor }) => (hoverBackgroundColor ? hoverBackgroundColor : "var(--white)")};
+    border: ${({ $hoverBorderColor }) =>
+      $hoverBorderColor ? "1px solid " + $hoverBorderColor : "1px solid var(--body-color)"};
+    background-color: ${({ $hoverBackgroundColor }) =>
+      $hoverBackgroundColor ? $hoverBackgroundColor : "var(--white)"};
   }
 `;
 
@@ -57,9 +58,9 @@ const Button = (props) => {
   }
 
   function setOnClick() {
-    if (props.onClick) {
-      return props.onClick;
-    } else if (props.disabled) {
+    if (props.$onClick) {
+      return props.$onClick;
+    } else if (props.$disabled) {
       return null;
     } else {
       return handleClick;
@@ -67,17 +68,17 @@ const Button = (props) => {
   }
   return (
     <StyledButton
-      type="button"
-      onClick={setOnClick()}
-      disabled={props.disabled}
-      alternative={props.alternative}
-      backgroundColor={props.backgroundColor}
-      color={props.color}
+      $type="button"
+      $onClick={setOnClick()}
+      $disabled={props.disabled}
+      $alternative={props.alternative}
+      $backgroundColor={props.backgroundColor}
+      $color={props.color}
       className={props.className ? props.className : ""}
-      uppercase={props.uppercase}
-      fontSize={props.fontSize}
-      hoverBackgroundColor={props.hoverBackgroundColor}
-      hoverBorderColor={props.hoverBorderColor}
+      $uppercase={props.uppercase}
+      $fontSize={props.fontSize}
+      $hoverBackgroundColor={props.hoverBackgroundColor}
+      $hoverBorderColor={props.hoverBorderColor}
     >
       {props.children}
     </StyledButton>

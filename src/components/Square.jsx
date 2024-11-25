@@ -11,7 +11,7 @@ const StyledSquare = styled.div`
 
   ${(props) => {
     return (
-      props.smallMobileSquare &&
+      props.$smallMobileSquare &&
       respond(
         "tab-land",
         css`
@@ -25,9 +25,9 @@ const StyledSquare = styled.div`
 
   ${(props) => {
     return (
-      props.backgroundColor &&
+      props.$backgroundColor &&
       css`
-        background-color: ${props.backgroundColor};
+        background-color: ${props.$backgroundColor};
       `
     );
   }};
@@ -37,8 +37,8 @@ const Square = (props) => {
   return (
     <StyledSquare
       className={props.className || ""}
-      backgroundColor={props.backgroundColor}
-      smallMobileSquare={props.smallMobileSquare}
+      $backgroundColor={props.backgroundColor}
+      $smallMobileSquare={props.smallMobileSquare}
     >
       {props.children}
     </StyledSquare>

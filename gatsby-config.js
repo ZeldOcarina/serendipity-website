@@ -82,6 +82,11 @@ module.exports = {
             mapping: { featuredImage: `fileNode` },
             tableId: `tbllwSHYWivX5qMaj`
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: `About`,
+            mapping: { Media: `fileNode` },
+          },
         ],
       },
     },

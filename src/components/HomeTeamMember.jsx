@@ -12,13 +12,13 @@ const StyledHomeTeamMember = styled.article`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: ${({ circleWidth }) =>
+    width: ${({ $circleWidth }) =>
       css`
-        ${circleWidth}rem
+        ${$circleWidth}rem
       `};
-    height: ${({ circleWidth }) =>
+    height: ${({ $circleWidth }) =>
       css`
-        ${circleWidth}rem
+        ${$circleWidth}rem
       `};
     border-radius: 50%;
     margin-bottom: 1.5rem;
@@ -26,8 +26,8 @@ const StyledHomeTeamMember = styled.article`
 
     ${(props) => {
       return css`
-        color: ${props.textColor};
-        background-color: ${props.backgroundColor};
+        color: ${props.$textColor};
+        background-color: ${props.$backgroundColor};
       `;
     }}
   }
@@ -61,7 +61,7 @@ const StyledHomeTeamMember = styled.article`
 
 const HomeTeamMember = ({ backgroundColor, textColor, email, name, post, circleWidth }) => {
   return (
-    <StyledHomeTeamMember textColor={textColor} backgroundColor={backgroundColor} circleWidth={circleWidth}>
+    <StyledHomeTeamMember $textColor={textColor} $backgroundColor={backgroundColor} $circleWidth={circleWidth}>
       <div className="circle-name">
         <span className="name">{name}</span>
         <span className="post">{post}</span>

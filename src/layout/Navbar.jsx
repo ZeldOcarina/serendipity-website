@@ -7,8 +7,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import AppContext from "../context/AppContext";
 
 const Wrapper = styled.nav`
-  position: ${({ homePage }) => (homePage ? css`absolute` : css`static`)};
-  background-color: ${({ homePage }) => (homePage ? css`transparent` : css`var(--color-primary-light)`)};
+  position: ${({ $homePage }) => ($homePage ? css`absolute` : css`static`)};
+  background-color: ${({ $homePage }) => ($homePage ? css`transparent` : css`var(--color-primary-light)`)};
   top: 0;
   left: 0;
   width: 100%;
@@ -98,7 +98,7 @@ const Navbar = ({
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useContext(AppContext);
 
   return (
-    <Wrapper scrolled={false} homePage={homePage}>
+    <Wrapper $homePage={homePage}>
       <div className="container">
         <Link to="/">
           <img src={logo} alt={logoAlt} className="logo" />
