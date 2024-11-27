@@ -113,15 +113,15 @@ const FeaturedNews = () => {
       <SectionTitle>PRESS</SectionTitle>
       <div className="bottom-container">
         <div className="news-container">
-          {homeNewsData.map(({ id, data: { title, articleDate } }, i) => {
+          {homeNewsData.map(({ id, data: { title, articleDate, externalUrl } }, i) => {
             return (
-              <React.Fragment key={id}>
+              <a key={id} href={externalUrl}>
                 <article className="single-new">
                   <span className="date">{articleDate}</span>
                   <p className="excerpt">{title}</p>
                 </article>
                 {!(homeNewsData.length === i + 1) && <hr />}
-              </React.Fragment>
+              </a>
             );
           })}
           <Button alternative backgroundColor="rgba(255, 255, 255, 0.25)" uppercase>
@@ -140,6 +140,7 @@ const query = graphql`
         data {
           articleDate(formatString: "MMMM DD")
           title
+          externalUrl
         }
         id
       }

@@ -63,29 +63,33 @@ const StyledHomeNews = styled.div`
       padding-top: 5%;
     }
 
-    .bottom-content {
-      position: absolute;
-      z-index: 100;
-      bottom: 5%;
-      max-width: 90%;
-      left: 5%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .bottom-image {
-        max-width: 50%;
-      }
-      .bottom-image--award {
-        max-width: 75%;
-      }
-    }
-
     .bg-image {
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
+    }
+  }
+
+  .square-bottom {
+    flex-grow: 1;
+  }
+
+  .bottom-content {
+    position: relative;
+    z-index: 100;
+    bottom: 5%;
+    max-width: 90%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bottom-image {
+      max-width: 50%;
+    }
+    .bottom-image--award {
+      max-width: 75%;
     }
   }
 `;
@@ -99,16 +103,19 @@ function HomeNews() {
           <div className="square-bottom">
             <h3>Women of the Movement Best Limited Series</h3>
           </div>
+          <div className="bottom-content">
+            <StaticImage className="bottom-image" src="../images/gracies.png" alt="The Gracies logo" />
+            <StaticImage
+              className="bottom-image bottom-image--award"
+              src="../images/award.png"
+              alt="Award winner logo"
+            />
+          </div>
         </div>
       </Square>
       <Square className="award-winner" backgroundColor="var(--color-primary)">
         <h2 className="square-title">FEATURING</h2>
-        <div className="bottom-content">
-          <StaticImage className="bottom-image" src="../images/gracies.png" alt="The Gracies logo" />"
-          <StaticImage className="bottom-image bottom-image--award" src="../images/award.png" alt="Award winner logo" />
-          "
-        </div>
-        <StaticImage className="bg-image" quality={100} src="../images/award-winner.png" alt="Award Winner" />
+        <StaticImage className="bg-image" quality={100} src="../images/woman-of-the-movement.png" alt="Award Winner" />
       </Square>
       <Square>
         <FeaturedSquare />
