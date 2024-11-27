@@ -121,6 +121,7 @@ module.exports = {
             },
             { family: "Asul", variants: ["400", "700"] },
             { family: "Six Caps", variants: ["400"] },
+            { family: "Fleur De Leah", variants: ["400"] }
           ],
         },
       },

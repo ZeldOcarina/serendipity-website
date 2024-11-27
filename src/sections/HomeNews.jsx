@@ -54,6 +54,21 @@ const StyledHomeNews = styled.div`
   .award-winner {
     padding: 0;
 
+    h2 {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      color: white;
+      font-family: "Fleur De Leah", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 6rem;
+      text-align: center;
+      width: 100%;
+    }
+
     .square-title {
       text-align: center;
       font-family: var(--body-font);
@@ -113,12 +128,12 @@ function HomeNews() {
           </div>
         </div>
       </Square>
-      <Square className="award-winner" backgroundColor="var(--color-primary)">
-        <h2 className="square-title">FEATURING</h2>
-        <StaticImage className="bg-image" quality={100} src="../images/woman-of-the-movement.png" alt="Award Winner" />
-      </Square>
       <Square>
         <FeaturedSquare />
+      </Square>
+      <Square className="award-winner" backgroundColor="var(--color-primary)">
+        <StaticImage className="bg-image" quality={100} src="../images/new-photo.png" alt="The Queen Empress of Iran" />
+        <h2>Empress Farah Pahlavi</h2>
       </Square>
       <Square backgroundColor="var(--color-primary)" smallMobileSquare>
         <FeaturedNews />
