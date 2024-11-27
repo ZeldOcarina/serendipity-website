@@ -42,7 +42,7 @@ const StyledBlock = styled.div`
 
   p {
     &:not(:last-child) {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
   }
 `;
@@ -52,8 +52,6 @@ const AboutPage = ({
     aboutPageData: { aboutPageData },
   },
 }) => {
-  console.log(aboutPageData);
-
   return (
     <>
       <Layout>
@@ -109,7 +107,6 @@ export const query = graphql`
         data {
           Block
           Heading
-          Subheading
           Copy
           AltText
           Media {

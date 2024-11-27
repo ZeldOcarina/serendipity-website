@@ -20,10 +20,10 @@ module.exports = {
         name: "press",
         link: "/press",
       },
-      //   {
-      //     name: "about",
-      //     link: "/about",
-      //   },
+      {
+        name: "about",
+        link: "/about",
+      },
       //   {
       //     name: "projects",
       //     link: "/projects",
